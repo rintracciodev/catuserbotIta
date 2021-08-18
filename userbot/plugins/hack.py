@@ -34,7 +34,7 @@ async def _(event):
             event = await edit_or_reply(event, "Hacking..")
             animation_chars = [
                 "`Connecting To Hacked Private Server...`",
-                "`Target Selected.`",
+                "`Bersaglio agganciato...`",
                 "`Hacking... 0%\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
                 "`Hacking... 4%\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
                 "`Hacking... 8%\n██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
@@ -42,8 +42,8 @@ async def _(event):
                 "`Hacking... 36%\n█████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
                 "`Hacking... 52%\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ `",
                 "`Hacking... 84%\n█████████████████████▒▒▒▒ `",
-                "`Hacking... 100%\n█████████HACKED███████████ `",
-                f"`Targeted Account Hacked...\n\nPay 69$ To` {ALIVE_NAME} . `To Remove this hack..`",
+                "`Hacking... 100%\n█████████HACKERATO███████████ `",
+                f"`Account Hackerato...\n\nPaga € 700 a` {ALIVE_NAME} . `Per rimuovere il virus..`",
             ]
             animation_interval = 3
             animation_ttl = range(11)
