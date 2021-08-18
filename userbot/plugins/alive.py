@@ -81,11 +81,11 @@ async def amireallyalive(event):
 
 temp = """{ALIVE_TEXT}
 **{EMOJI} Database :** `{dbhealth}`
-**{EMOJI} Telethon Version :** `{telever}`
-**{EMOJI} Catuserbot Version :** `{catver}`
-**{EMOJI} Python Version :** `{pyver}`
-**{EMOJI} Uptime :** `{uptime}`
-**{EMOJI} Master:** {mention}"""
+**{EMOJI} Versione Telethon :** `{telever}`
+**{EMOJI} Versione CatUserBot :** `{catver}`
+**{EMOJI} Versione Python :** `{pyver}`
+**{EMOJI} Online da :** `{uptime}`
+**{EMOJI} Developer :** {mention}"""
 
 
 @catub.cat_cmd(
@@ -105,10 +105,10 @@ async def amireallyalive(event):
     EMOJI = gvarstatus("ALIVE_EMOJI") or "  ✥ "
     ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "**Catuserbot is Up and Running**"
     cat_caption = f"{ALIVE_TEXT}\n"
-    cat_caption += f"**{EMOJI} Telethon version :** `{version.__version__}\n`"
-    cat_caption += f"**{EMOJI} Catuserbot Version :** `{catversion}`\n"
-    cat_caption += f"**{EMOJI} Python Version :** `{python_version()}\n`"
-    cat_caption += f"**{EMOJI} Master:** {mention}\n"
+    cat_caption += f"**{EMOJI} Versione Telethon :** `{version.__version__}\n`"
+    cat_caption += f"**{EMOJI} Versione CatUserBot :** `{catversion}`\n"
+    cat_caption += f"**{EMOJI} Versione Python  :** `{python_version()}\n`"
+    cat_caption += f"**{EMOJI} Developer :** {mention}\n"
     results = await event.client.inline_query(Config.TG_BOT_USERNAME, cat_caption)
     await results[0].click(event.chat_id, reply_to=reply_to_id, hide_via=True)
     await event.delete()
