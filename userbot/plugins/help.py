@@ -14,10 +14,10 @@ plugin_category = "tools"
 hemojis = {
     "admin": "👮‍♂️",
     "bot": "🤖",
-    "fun": "🎨",
-    "misc": "🧩",
-    "tools": "🧰",
-    "utils": "🗂",
+    "Divertimento": "🎨",
+    "Generale": "🧩",
+    "Strumenti": "🧰",
+    "Funzioni utili": "🗂",
     "extra": "➕",
 }
 
@@ -99,7 +99,7 @@ async def plugininfo(input_str, event, flag):
 async def grpinfo():
     outstr = "**Plugins in Catuserbot are:**\n\n"
     outstr += f"**👩‍💻 Usage : ** `{cmdprefix}help <plugin name>`\n\n"
-    category = ["admin", "bot", "fun", "misc", "tools", "utils", "extra"]
+    category = ["admin", "bot", "divertimento", "generale", "strumenti", "generale", "extra"]
     for cat in category:
         plugins = GRP_INFO[cat]
         outstr += f"**{hemojis[cat]} {cat.title()} **({len(plugins)})\n"
@@ -111,7 +111,7 @@ async def grpinfo():
 
 async def cmdlist():
     outstr = "**Total list of Commands in your Catuserbot are :**\n\n"
-    category = ["admin", "bot", "fun", "misc", "tools", "utils", "extra"]
+    category = ["admin", "bot", "divertimento", "generale", "strumenti", "extra"]
     for cat in category:
         plugins = GRP_INFO[cat]
         outstr += f"**{hemojis[cat]} {cat.title()} ** - {len(plugins)}\n\n"
@@ -133,9 +133,9 @@ async def cmdlist():
         "description": "To get information or guide for the command or plugin",
         "note": "if command name and plugin name is same then you get guide for plugin. So by using this flag you get command guide",
         "flags": {
-            "c": "To get info of command.",
-            "p": "To get info of plugin.",
-            "t": "To get all plugins in text format.",
+            "c": "Per avere le informazioni du un comando.",
+            "p": "Per avere le informazioni di una categoria.",
+            "t": "Per avere tutte le categorie in formato testo.",
         },
         "usage": [
             "{tr}help (plugin/command name)",
