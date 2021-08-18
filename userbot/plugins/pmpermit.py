@@ -480,13 +480,14 @@ __Let's make this smooth and let me know why you are here.__
 
 **Choose one of the following reasons why you are here:**"""
     buttons = [
-        (Button.inline(text="To enquire something.", data="to_enquire_something"),),
-        (Button.inline(text="To request something.", data="to_request_something"),),
-        (Button.inline(text="To chat with my master.", data="to_chat_with_my_master"),),
+        (Button.inline(text="Per chiedere qualcosa.", data="per_chiedere_qualcosa"),),
+        (Button.inline(text="Per fare una richiesta.", data="per_fare_una_richiesta"),),
+        (Button.inline(text="Per chattare.", data="per_chattare"),),
         (
             Button.inline(
-                text="To spam my master's inbox.",
-                data="to_spam_my_master_inbox",
+                text="Per spammare.",
+                
+                data="per_spammare",
             ),
         ),
     ]
