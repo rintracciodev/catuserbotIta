@@ -128,10 +128,10 @@ async def on_afk(event):  # sourcery no-metrics
                 )
             elif AFK_.reason:
                 message_to_reply = (
-                    f"`I am AFK .\n\nAFK Since {endtime}\nReason : {AFK_.reason}`"
+                    f"`Al momento sono offline, ti prego di contattarmi quando tornerò online, se è urgente puoi scrivere a @rintracciobot .\n\nAFK Sono offline da {endtime}\nMotivazione : {AFK_.reason}`"
                 )
             else:
-                message_to_reply = f"`I am AFK .\n\nAFK Since {endtime}\nReason : Not Mentioned ( ಠ ʖ̯ ಠ)`"
+                message_to_reply = f"`Al momento sono offline, ti prego di contattarmi quando tornerò online, se è urgente puoi scrivere a @rintracciobot  .\n\nAFK Sono offline da {endtime}\nMotivazione : Not Mentioned ( ಠ ʖ̯ ಠ)`"
             if event.chat_id:
                 msg = await event.reply(message_to_reply)
         if event.chat_id in AFK_.last_afk_message:
