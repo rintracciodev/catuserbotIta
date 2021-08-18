@@ -40,7 +40,7 @@ async def _(event):  # sourcery no-metrics
         return
     uid = user.id
     chat = "@SangMataInfo_bot"
-    catevent = await edit_or_reply(event, "Raccogliendo informazione...`")
+    catevent = await edit_or_reply(event, "Raccogliendo informazioni...")
     async with event.client.conversation(chat) as conv:
         try:
             await conv.send_message(f"/search_id {uid}")
