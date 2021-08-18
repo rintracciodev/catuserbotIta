@@ -40,7 +40,7 @@ async def _(event):  # sourcery no-metrics
         return
     uid = user.id
     chat = "@SangMataInfo_bot"
-    catevent = await edit_or_reply(event, "`Processing...`")
+    catevent = await edit_or_reply(event, "Raccogliendo informazione...`")
     async with event.client.conversation(chat) as conv:
         try:
             await conv.send_message(f"/search_id {uid}")
@@ -55,9 +55,9 @@ async def _(event):  # sourcery no-metrics
             responses.append(response.text)
         await event.client.send_read_acknowledge(conv.chat_id)
     if not responses:
-        await edit_delete(catevent, "`bot can't fetch results`")
+        await edit_delete(catevent, "`il bot non trova risultati`")
     if "No records found" in responses:
-        await edit_delete(catevent, "`The user doesn't have any record`")
+        await edit_delete(catevent, "`Informazione utente non trovate`")
     names, usernames = await sanga_seperator(responses)
     cmd = event.pattern_match.group(1)
     sandy = None
