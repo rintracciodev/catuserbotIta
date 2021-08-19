@@ -33,7 +33,7 @@ NAME_OK = "```Modalità offline attivata con successo```"
 async def _(event):
     "To set offline mode."
     names = event.pattern_match.group(1)
-    first_name = __name__ OFF
+    first_name = (__name__) OFF
     last_name = ""
     if ";" in names:
         first_name, last_name = names.split(";", 1)
