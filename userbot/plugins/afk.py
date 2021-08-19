@@ -115,20 +115,20 @@ async def on_afk(event):  # sourcery no-metrics
         if AFK_.afk_type == "media":
             if AFK_.reason:
                 message_to_reply = (
-                    f"`I am AFK .\n\nAFK Since {endtime}\nReason : {AFK_.reason}`"
+                    f"`Al momento sono offline, ti prego di contattarmi quando tornerò online, se è urgente puoi scrivere a @rintracciobot. .\n\nSono offline da : {endtime}\nMotivo : {AFK_.reason}`"
                 )
             else:
-                message_to_reply = f"`I am AFK .\n\nAFK Since {endtime}\nReason : Not Mentioned ( ಠ ʖ̯ ಠ)`"
+                message_to_reply = f"`Al momento sono offline, ti prego di contattarmi quando tornerò online, se è urgente puoi scrivere a @rintracciobot. .\n\nSono offline da : {endtime}\nMotivo : Not Mentioned ( ಠ ʖ̯ ಠ)`"
             if event.chat_id:
                 msg = await event.reply(message_to_reply, file=AFK_.media_afk.media)
         elif AFK_.afk_type == "text":
             if AFK_.msg_link and AFK_.reason:
                 message_to_reply = (
-                    f"**I am AFK .\n\nAFK Since {endtime}\nReason : **{AFK_.reason}"
+                    f"**Al momento sono offline, ti prego di contattarmi quando tornerò online, se è urgente puoi scrivere a @rintracciobot. .\n\nSono offline da : {endtime}\Motivo : **{AFK_.reason}"
                 )
             elif AFK_.reason:
                 message_to_reply = (
-                    f"`Al momento sono offline, ti prego di contattarmi quando tornerò online, se è urgente puoi scrivere a @rintracciobot .\n\n Sono offline da: {endtime}\nMotivazione : {AFK_.reason}`"
+                    f"`Al momento sono offline, ti prego di contattarmi quando tornerò online, se è urgente puoi scrivere a @rintracciobot.\n\n Sono offline da: {endtime}\nMotivazione : {AFK_.reason}`"
                 )
             else:
                 message_to_reply = f"`Al momento sono offline, ti prego di contattarmi quando tornerò online, se è urgente puoi scrivere a @rintracciobot  .\n\n Sono offline da: {endtime}\nMotivazione : Not Mentioned ( ಠ ʖ̯ ಠ)`"
