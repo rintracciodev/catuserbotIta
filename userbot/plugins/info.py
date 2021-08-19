@@ -147,12 +147,12 @@ async def _(event):
 
 
 @catub.cat_cmd(
-    pattern="whois(?:\s|$)([\s\S]*)",
-    command=("whois", plugin_category),
+    pattern="info(?:\s|$)([\s\S]*)",
+    command=("info", plugin_category),
     info={
         "header": "Gets info of an user.",
         "description": "User compelete details.",
-        "usage": "{tr}whois <username/userid/reply>",
+        "usage": "{tr}info <username/userid/reply>",
     },
 )
 async def who(event):
