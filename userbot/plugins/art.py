@@ -108,7 +108,7 @@ G = (
     "╬═╬ \n"
     "╬═╬ \n"
     "╬═╬ \n"
-    "╬═╬ Hello, My Friend :D \n"
+    "╬═╬ Perchè non implodi ? :D \n"
     "╬═╬☻/ \n"
     "╬═╬/▌ \n"
     "╬═╬/ \\n"
@@ -567,7 +567,7 @@ async def bluedevilrip(rip):
     await edit_or_reply(rip, T)
 
     
-  @catub.cat_cmd(
+@catub.cat_cmd(
     pattern="cesso$",
     command=("cesso", plugin_category),
     info={
