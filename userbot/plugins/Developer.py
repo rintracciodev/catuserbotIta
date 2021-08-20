@@ -1,7 +1,6 @@
 A = (
     "𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗿 ====> @rintraccio ✅\n"
-    )
-
+)
 
 @catub.cat_cmd(
     pattern="Developer$",
