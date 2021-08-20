@@ -349,6 +349,16 @@ T = (
 )
     
     
+U = (
+    "──────────────────────\n"
+    "─────────────███──────\n"
+    "─────────────███──────\n"
+    "──────▄█████▄█▀▀──────\n"
+    "───────▀█████─────────\n"
+    "────────▄████▄────────\n"
+)
+
+
 @catub.cat_cmd(   
     pattern="monster$",
     command=("monster", plugin_category),
@@ -555,3 +565,16 @@ async def bluedevillol(lol):
 async def bluedevilrip(rip):
     "fun art command"
     await edit_or_reply(rip, T)
+
+    
+  @catub.cat_cmd(
+    pattern="cesso$",
+    command=("cesso", plugin_category),
+    info={
+        "header": "Per mandare un cesso",
+        "usage": "{tr}cesso",
+    },
+)
+async def bluedevilrip(cesso):
+    "fun art command"
+    await edit_or_reply(cesso, U)
