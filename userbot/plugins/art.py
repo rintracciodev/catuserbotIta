@@ -341,7 +341,15 @@ S = (
 )    
 
 
-@catub.cat_cmd(
+T = (
+    
+    "░█▀▀█ ▀█▀ ░█▀▀█\n"
+    "░█▄▄▀ ░█  ░█▄▄█\n"
+    "░█ ░█ ▄█▄ ░█ ░ \n"
+)
+    
+    
+@catub.cat_cmd(   
     pattern="monster$",
     command=("monster", plugin_category),
     info={
@@ -534,3 +542,16 @@ async def bluedevildislike(dislike):
 async def bluedevillol(lol):
     "fun art command"
     await edit_or_reply(lol, S)
+
+    
+@catub.cat_cmd(
+    pattern="rip$",
+    command=("rip", plugin_category),
+    info={
+        "header": "For say rip",
+        "usage": "{tr}rip",
+    },
+)
+async def bluedevilrip(rip):
+    "fun art command"
+    await edit_or_reply(rip, T)
