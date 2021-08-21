@@ -586,14 +586,13 @@ async def bluedevilrip(cesso):
 
     
 @catub.cat_cmd(
-    pattern="Developer$",
-    command=("Developer", plugin_category),
+    pattern="developer$",
+    command=("developer", plugin_category),
     info={
         "header": "Per vedere chi è il Developer",
-        "usage": "{tr}Developer",
+        "usage": "{tr}developer",
     },
 )
-async def bluedevilDeveloper(Developer):
+async def bluedevildeveloper(developer):
     "fun art command"
-    await edit_or_reply(Developer, V)
-    
+    await edit_or_reply(developer, V)
