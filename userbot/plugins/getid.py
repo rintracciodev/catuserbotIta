@@ -54,7 +54,7 @@ async def _(event):
         else:
             await edit_or_reply(
                 event,
-                f"**🆔 Utente: **`{r_msg.sender_id}`",
+                f"**🆔 {username}: **`{r_msg.sender_id}`",
             )
 
     else:
