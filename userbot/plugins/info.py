@@ -69,7 +69,7 @@ async def fetch_info(replied_user, event):
     caption += f"<b>🌐 E' verificato da Telegram:</b> {verified}\n\n"
     caption += f"<b>✍️ Bio:</b> \n<code>{user_bio}</code>\n\n"
     caption += f"<b>👥 Chat in comune:</b> {common_chat}\n"
-    caption += "<b>🔗 Permalink:</b> "
+    caption += "<b>🔗 PermaLink:</b> "
     caption += f'<a href="tg://user?id={user_id}">{first_name}</a>'
     return photo, caption
 
