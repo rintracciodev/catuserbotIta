@@ -249,7 +249,7 @@ async def fetch_info(chat, event):  # sourcery no-metrics
     broadcast = (
         chat_obj_info.broadcast if hasattr(chat_obj_info, "broadcast") else False
     )
-    chat_type = "Channel" if broadcast else "Group"
+    chat_type = "Canale" if broadcast else "Gruppo"
     chat_title = chat_obj_info.title
     warn_emoji = emojize(":warning:")
     try:
