@@ -338,28 +338,28 @@ async def fetch_info(chat, event):  # sourcery no-metrics
     username = chat_obj_info.username if hasattr(chat_obj_info, "username") else None
     bots_list = chat.full_chat.bot_info  # this is a list
     bots = 0
-    supergruppo = (
-        "<b>Sì</b>"
+    supergroup = (
+        "<b>Yes</b>"
         if hasattr(chat_obj_info, "megagroup") and chat_obj_info.megagroup
         else "No"
     )
-    modalità lenta = (
-        "<b>Sì</b>"
+    slowmode = (
+        "<b>Yes</b>"
         if hasattr(chat_obj_info, "slowmode_enabled") and chat_obj_info.slowmode_enabled
         else "No"
     )
-    tempo modalità lenta = (
+    slowmode_time = (
         chat.full_chat.slowmode_seconds
         if hasattr(chat_obj_info, "slowmode_enabled") and chat_obj_info.slowmode_enabled
         else None
     )
-    limitato = (
-        "<b>Sì</b>"
+    restricted = (
+        "<b>Yes</b>"
         if hasattr(chat_obj_info, "restricted") and chat_obj_info.restricted
         else "No"
     )
-    verificato da telegram = (
-        "<b>Sì</b>"
+    verified = (
+        "<b>Yes</b>"
         if hasattr(chat_obj_info, "verified") and chat_obj_info.verified
         else "No"
     )
@@ -390,14 +390,14 @@ async def fetch_info(chat, event):  # sourcery no-metrics
     caption = "<b>INFO CHAT:</b>\n"
     caption += f"Chat ID: <code>{chat_obj_info.id}</code>\n"
     if chat_title is not None:
-        caption += f"Nome {chat_type}: {chat_title}\n"
+        caption += f"{chat_type} Nome: {chat_title}\n"
     if former_title is not None:  # Meant is the very first title
         caption += f"Nome precedente: {former_title}\n"
     if username is not None:
-        caption += f"Nome {chat_type}: Pubblico\n"
+        caption += f"{chat_type} Tipo: Public\n"
         caption += f"Link: {username}\n"
     else:
-        caption += f"Tipo {chat_type}: Privato\n"
+        caption += f"{chat_type} Tipo: Private\n"
     if creator_username is not None:
         caption += f"Creatore: {creator_username}\n"
     elif creator_valid:
@@ -405,13 +405,13 @@ async def fetch_info(chat, event):  # sourcery no-metrics
             f'Creatore: <a href="tg://user?id={creator_id}">{creator_firstname}</a>\n'
         )
     if created is not None:
-        caption += f"Creato il: <code>{created.date().strftime('%b %d, %Y')} - {created.time()}</code>\n"
+        caption += f"Creato il <code>{created.date().strftime('%b %d, %Y')} - {created.time()}</code>\n"
     else:
-        caption += f"Creato il: <code>{chat_obj_info.date.date().strftime('%b %d, %Y')} - {chat_obj_info.date.time()}</code> {warn_emoji}\n"
+        caption += f"Creato il <code>{chat_obj_info.date.date().strftime('%b %d, %Y')} - {chat_obj_info.date.time()}</code> {warn_emoji}\n"
     caption += f"Data Centre ID: {dc_id}\n"
     if exp_count is not None:
         chat_level = int((1 + sqrt(1 + 7 * exp_count / 14)) / 2)
-        caption += f"{chat_type} Livello: <code>{chat_level}</code>\n"
+        caption += f"{chat_type} level: <code>{chat_level}</code>\n"
     if messages_viewable is not None:
         caption += f"Messaggi visibili: <code>{messages_viewable}</code>\n"
     if messages_sent:
@@ -425,26 +425,26 @@ async def fetch_info(chat, event):  # sourcery no-metrics
     if bots_list:
         caption += f"Bot: <code>{bots}</code>\n"
     if members_online:
-        caption += f"Currently online: <code>{members_online}</code>\n"
+        caption += f"Utenti online: <code>{members_online}</code>\n"
     if restrcited_users is not None:
-        caption += f"Restricted users: <code>{restrcited_users}</code>\n"
+        caption += f"Utenti Limitati: <code>{restrcited_users}</code>\n"
     if banned_users is not None:
-        caption += f"Banned users: <code>{banned_users}</code>\n"
+        caption += f"Utenti bannati: <code>{banned_users}</code>\n"
     if group_stickers is not None:
-        caption += f'{chat_type} stickers: <a href="t.me/addstickers/{chat.full_chat.stickerset.short_name}">{group_stickers}</a>\n'
+        caption += f'{chat_type} sticker: <a href="t.me/addstickers/{chat.full_chat.stickerset.short_name}">{group_stickers}</a>\n'
     caption += "\n"
     if not broadcast:
-        caption += f"Slow mode: {slowmode}"
+        caption += f"Modalità lenta: {slowmode}"
         if (
             hasattr(chat_obj_info, "slowmode_enabled")
             and chat_obj_info.slowmode_enabled
         ):
-            caption += f", <code>{slowmode_time}s</code>\n\n"
+            caption += f"Tempo Modalità lenta, <code>{slowmode_time}s</code>\n\n"
         else:
             caption += "\n\n"
-        caption += f"Supergroup: {supergroup}\n\n"
+        caption += f"Supergruppo: {supergroup}\n\n"
     if hasattr(chat_obj_info, "restricted"):
-        caption += f"Restricted: {restricted}\n"
+        caption += f"Limitato: {restricted}\n"
         if chat_obj_info.restricted:
             caption += f"> Platform: {chat_obj_info.restriction_reason[0].platform}\n"
             caption += f"> Reason: {chat_obj_info.restriction_reason[0].reason}\n"
