@@ -394,10 +394,10 @@ async def fetch_info(chat, event):  # sourcery no-metrics
     if former_title is not None:  # Meant is the very first title
         caption += f"Nome precedente: {former_title}\n"
     if username is not None:
-        caption += f"{chat_type} Tipo: Public\n"
+        caption += f"Tipo {chat_type}: Public\n"
         caption += f"Link: {username}\n"
     else:
-        caption += f"{chat_type} Tipo: Private\n"
+        caption += f"Tipo {chat_type}: Private\n"
     if creator_username is not None:
         caption += f"Creatore: {creator_username}\n"
     elif creator_valid:
