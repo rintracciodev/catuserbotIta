@@ -37,7 +37,7 @@ async def _(event):
             try:
                 if p.title:
                     return await edit_or_reply(
-                        event, f"The id of the chat/channel `{p.title}` is `{p.id}`"
+                        event, f" `{p.title}` = `{p.id}`"
                     )
             except Exception as e:
                 LOGS.info(str(e))
