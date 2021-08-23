@@ -338,28 +338,28 @@ async def fetch_info(chat, event):  # sourcery no-metrics
     username = chat_obj_info.username if hasattr(chat_obj_info, "username") else None
     bots_list = chat.full_chat.bot_info  # this is a list
     bots = 0
-    supergroup = (
-        "<b>Yes</b>"
+    supergruppo = (
+        "<b>Sì</b>"
         if hasattr(chat_obj_info, "megagroup") and chat_obj_info.megagroup
         else "No"
     )
-    slowmode = (
-        "<b>Yes</b>"
+    modalità lenta = (
+        "<b>Sì</b>"
         if hasattr(chat_obj_info, "slowmode_enabled") and chat_obj_info.slowmode_enabled
         else "No"
     )
-    slowmode_time = (
+    tempo modalità lenta = (
         chat.full_chat.slowmode_seconds
         if hasattr(chat_obj_info, "slowmode_enabled") and chat_obj_info.slowmode_enabled
         else None
     )
-    restricted = (
-        "<b>Yes</b>"
+    limitato = (
+        "<b>Sì</b>"
         if hasattr(chat_obj_info, "restricted") and chat_obj_info.restricted
         else "No"
     )
-    verified = (
-        "<b>Yes</b>"
+    verificato da telegram = (
+        "<b>Sì</b>"
         if hasattr(chat_obj_info, "verified") and chat_obj_info.verified
         else "No"
     )
@@ -390,14 +390,14 @@ async def fetch_info(chat, event):  # sourcery no-metrics
     caption = "<b>INFO CHAT:</b>\n"
     caption += f"Chat ID: <code>{chat_obj_info.id}</code>\n"
     if chat_title is not None:
-        caption += f"{chat_type} Nome Gruppo: {chat_title}\n"
+        caption += f"Nome {chat_type}: {chat_title}\n"
     if former_title is not None:  # Meant is the very first title
         caption += f"Nome precedente: {former_title}\n"
     if username is not None:
-        caption += f"{chat_type} Tipo Gruppo: Public\n"
+        caption += f"Nome {chat_type}: Pubblico\n"
         caption += f"Link: {username}\n"
     else:
-        caption += f"{chat_type} type: Private\n"
+        caption += f"Tipo {chat_type}: Privato\n"
     if creator_username is not None:
         caption += f"Creatore: {creator_username}\n"
     elif creator_valid:
