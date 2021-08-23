@@ -390,7 +390,7 @@ async def fetch_info(chat, event):  # sourcery no-metrics
     caption = "<b>INFO CHAT:</b>\n"
     caption += f"Chat ID: <code>{chat_obj_info.id}</code>\n"
     if chat_title is not None:
-        caption += f"{chat_type} Nome: {chat_title}\n"
+        caption += f"Nome {chat_type}: {chat_title}\n"
     if former_title is not None:  # Meant is the very first title
         caption += f"Nome precedente: {former_title}\n"
     if username is not None:
