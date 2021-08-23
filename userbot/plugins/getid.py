@@ -31,7 +31,7 @@ async def _(event):
         try:
             if p.first_name:
                 return await edit_or_reply(
-                    event, f"The id of the user `{input_str}` is `{p.id}`"
+                    event, f"⚡ ID `{input_str}` : `{p.id}`"
                 )
         except Exception:
             try:
