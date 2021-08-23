@@ -31,7 +31,9 @@ async def _(event):
         try:
             if p.first_name:
                 return await edit_or_reply(
-                    event, f" `{input_str}` : `{p.id}`"
+                    event, f" (mention, f"[{custom}](tg://user?id={user.id})")
+    tag = user.first_name.replace("\u2060", "") if user.first_name else user.username
+    await edit_or_reply(mention, f"[{tag}](tg://user?id={user.id})") : `{p.id}`"
                 )
         except Exception:
             try:
