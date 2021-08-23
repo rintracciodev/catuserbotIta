@@ -31,13 +31,13 @@ async def _(event):
         try:
             if p.first_name:
                 return await edit_or_reply(
-                    event, f"The id of the user `{input_str}` is `{p.id}`"
+                    event, f" `{input_str}` : `{p.id}`"
                 )
         except Exception:
             try:
                 if p.title:
                     return await edit_or_reply(
-                        event, f" `{p.title}` = `{p.id}`"
+                        event, f"The id of the chat/channel `{p.title}` is `{p.id}`"
                     )
             except Exception as e:
                 LOGS.info(str(e))
