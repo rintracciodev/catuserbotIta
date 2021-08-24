@@ -365,14 +365,14 @@ V = (
 
 
 W = (
-    "🔱Middleman = admin = escrow🔱
-È un terzo che fa da tramite in uno scambio (vendita o acquisto) per garantire sicurezza ad entrambi. Il mm deve avere feed.
+    "🔱Middleman = admin = escrow🔱\n"
+    "È un terzo che fa da tramite in uno scambio (vendita o acquisto) per garantire sicurezza ad entrambi. Il mm deve avere feed.\n"
 
-☔️Esempio:☔️
+    "☔️Esempio:☔️\n"
 
-Io do il mio metodo al mm
-Tu dai i soldi al mm. Il mm controlla se il metodo va.
-Se non ci sono problemi l'mm ti invia il metodo e io ricevo i soldi.\n"
+    "Io do il mio metodo al mm\n"
+    "Tu dai i soldi al mm. Il mm controlla se il metodo va.\n"
+    "Se non ci sono problemi l'mm ti invia il metodo e io ricevo i soldi.\n"
 )
 
 
