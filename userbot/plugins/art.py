@@ -364,6 +364,18 @@ V = (
 )
 
 
+W = (
+    "🔱Middleman = admin = escrow🔱
+È un terzo che fa da tramite in uno scambio (vendita o acquisto) per garantire sicurezza ad entrambi. Il mm deve avere feed.
+
+☔️Esempio:☔️
+
+Io do il mio metodo al mm
+Tu dai i soldi al mm. Il mm controlla se il metodo va.
+Se non ci sono problemi l'mm ti invia il metodo e io ricevo i soldi.\n"
+)
+
+
 @catub.cat_cmd(   
     pattern="monster$",
     command=("monster", plugin_category),
@@ -589,10 +601,23 @@ async def bluedevilrip(cesso):
     pattern="developer$",
     command=("developer", plugin_category),
     info={
-        "header": "Per vedere chi è il Developer",
+        "header": "Per vedere chi è il Developer(di questa versione)",
         "usage": "{tr}developer",
     },
 )
 async def bluedevildeveloper(developer):
     "fun art command"
     await edit_or_reply(developer, V)
+
+    
+@catub.cat_cmd(
+    pattern="mm$",
+    command=("mm", plugin_category),
+    info={
+        "header": "Per avere la spiegazione dell'mm",
+        "usage": "{tr}mm",
+    },
+)
+async def bluedevilmm(mm):
+    "fun art command"
+    await edit_or_reply(mm, W)
