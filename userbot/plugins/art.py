@@ -367,9 +367,9 @@ V = (
 W = (
     "🔱Middleman = admin = escrow🔱\n"
     "È un terzo che fa da tramite in uno scambio (vendita o acquisto) per garantire sicurezza ad entrambi. Il mm deve avere feed.\n"
-
+    "             \n"
     "☔️Esempio:☔️\n"
-
+    "             \n"
     "Io do il mio metodo al mm\n"
     "Tu dai i soldi al mm. Il mm controlla se il metodo va.\n"
     "Se non ci sono problemi l'mm ti invia il metodo e io ricevo i soldi.\n"
