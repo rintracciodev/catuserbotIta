@@ -252,12 +252,12 @@ async def add_to_pack(
 
 
 @catub.cat_cmd(
-    pattern="kang(?:\s|$)([\s\S]*)",
-    command=("kang", plugin_category),
+    pattern="addsticker(?:\s|$)([\s\S]*)",
+    command=("addsticker", plugin_category),
     info={
         "header": "To kang a sticker.",
         "description": "Kang's the sticker/image to the specified pack and uses the emoji('s) you picked",
-        "usage": "{tr}kang [emoji('s)] [number]",
+        "usage": "{tr}addsticker [emoji('s)] [number]",
     },
 )
 async def kang(args):  # sourcery no-metrics
