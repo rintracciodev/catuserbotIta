@@ -377,7 +377,7 @@ W = (
 
 
 X = (
-    "Motivazioni netban:\n"
+    "🚷Motivazioni netban:\n"
     "            \n"
     "•Tentata truffa\n"
     "•Ammisione truffa\n"
