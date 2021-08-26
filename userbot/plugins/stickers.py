@@ -367,8 +367,8 @@ async def kang(args):  # sourcery no-metrics
                 return
             await edit_delete(
                 catevent,
-                f"`Sticker aggiunto al pacchetto con successo!\
-                    \nEmoji aggiunta correttamente al pacchetto ` [here](t.me/addstickers/{packname}) ` ✅",
+                f"`Ho aggiunto questo sticker correttamente!\
+                    \nSticker aggiunto correttamente al pacchetto ` [here](t.me/addstickers/{packname}) ` ✅",
                 parse_mode="md",
                 time=10,
             )
