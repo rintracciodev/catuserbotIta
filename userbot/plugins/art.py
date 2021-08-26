@@ -376,6 +376,28 @@ W = (
 )
 
 
+X = (
+    "Motivazioni netban:\n"
+    "            \n"
+    "•Tentata truffa\n"
+    "•Ammisione truffa\n"
+    "•Truffa\n"
+    "•Dox\n"
+    "•Fake netban\n" 
+    "•Fake admin\n"
+    "•Fake rep\n"
+    "•Fake di @\n"
+    "•Fake MM\n"
+    "•Voip di @\n"
+    "•Main di @\n"
+    "•Violazione T.o.S\n"
+    "•Refuse di MM\n"
+    "•Grief\n"
+    "•Storm\n"
+    "•Divulgazione di dati personali\n"
+)
+
+
 @catub.cat_cmd(   
     pattern="monster$",
     command=("monster", plugin_category),
@@ -621,3 +643,16 @@ async def bluedevildeveloper(developer):
 async def bluedevilmm(mm):
     "fun art command"
     await edit_or_reply(mm, W)
+
+    
+@catub.cat_cmd(
+    pattern="motivi$",
+    command=("motivi", plugin_category),
+    info={
+        "header": "Per avere i motivi di un netban",
+        "usage": "{tr}motivi",
+    },
+)
+async def bluedevilmotivi(motivi):
+    "fun art command"
+    await edit_or_reply(motivi, X)
