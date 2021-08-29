@@ -508,9 +508,9 @@ async def on_plug_in_callback_query_handler(event):
     if event.query.user_id == event.client.uid:
         text = "Idoit this options for user who messages you. not for you"
         return await event.answer(text, cache_time=0, alert=True)
-    text = """__Okay. Your request has been registered. Do not spam my master's inbox now. \
-My master is busy right now, When My master comes online he/she will check your message and ping you. \
-Then we can extend this conversation more but not right now.__"""
+    text = """__Va bene. La tua richiesta è stata registrata. Non spammare la posta in arrivo del mio padrone ora. \
+Il mio padrone è impegnato in questo momento, quando sarà online controllerà il tuo messaggio. \
+Allora possiamo estendere ulteriormente questa conversazione, ma non adesso.__"""
     sqllist.add_to_list("pmenquire", event.query.user_id)
     try:
         PM_WARNS = sql.get_collection("pmwarns").json
