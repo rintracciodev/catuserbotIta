@@ -43,4 +43,4 @@ async def _(event):
             except Exception as e:
                 return await edit_delete(event, f"`{e}`", 5)
 
-    await edit_or_reply(event, f"`{to_add_users} is/are Invited Successfully`")
+    await edit_or_reply(event, f"`{to_add_users} aggiunto/i con successo✅`")
