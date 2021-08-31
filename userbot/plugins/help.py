@@ -233,6 +233,6 @@ async def _(event):
 async def _(event):
     "To get dc of your bot"
     result = await event.client(functions.help.GetNearestDcRequest())
-    result = f"**Data Center :** {result.this_dc}**\
+    result = f"**📡  DataCenter »** {result.this_dc}\
               "
     await edit_or_reply(event, result)
