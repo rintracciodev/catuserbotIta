@@ -462,16 +462,16 @@ async def bluedevilhello(hello):
 
 
 @catub.cat_cmd(
-    pattern="hmf$",
-    command=("hmf", plugin_category),
+    pattern="heli$",
+    command=("heli", plugin_category),
     info={
         "header": "Just a art command try out yourself to see",
-        "usage": "{tr}hmf",
+        "usage": "{tr}heli",
     },
 )
-async def bluedevilhmf(hmf):
+async def bluedevilheli(heli):
     "fun art command"
-    await edit_or_reply(hmf, G)
+    await edit_or_reply(heli, G)
 
 
 @catub.cat_cmd(
