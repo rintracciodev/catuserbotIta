@@ -349,21 +349,21 @@ async def spy(event):
     except IndexError:
         lang2 = ""
 
-    string = f"✘ <b>Lookup For Ip : {ip}</b> {emoji_flag}\n\n\
-    <b>• City Name :</b>  <code>{city}</code>\n\
-    <b>• Region Name :</b>  <code>{region}</code> [<code>{region_code}</code>]\n\
-    <b>• Country Name :</b>  <code>{country}</code> [<code>{country_code}</code>]\n\
-    <b>• Continent Name :</b>  <code>{continent}</code> [<code>{continent_code}</code>]\n\
-    <b>• View on Map :  <a href = https://www.google.com/maps/search/?api=1&query={latitude}%2C{longitude}>Google Map</a></b>\n\
-    <b>• Postal Code :</b> <code>{postal}</code>\n\
-    <b>• Caller Code :</b>  <code>+{calling_code}</code>\n\
-    <b>• Carrier Detail :  <a href = https://www.{carriel}>{' '.join(carrier.split()[:2])}</a></b>\n\
-    <b>• Language :</b>  {language1} {lang2}\n\
-    <b>• Currency :</b>  <code>{currency}</code> [<code>{symbol}{currcode}</code>]\n\
-    <b>• Time Zone :</b> <code>{time_zone}</code> [<code>{time_z}</code>]\n\
-    <b>• Time :</b> <code>{current_time[11:16]}</code>\n\
-    <b>• Date :</b> <code>{current_time[:10]}</code>\n\
-    <b>• Time Offset :</b> <code>{current_time[-6:]}</code>"
+    string = f"✘ <b>📡Informazioni dell'ip : {ip}</b> {emoji_flag}\n\n\
+    <b>• 🏠Nome Città :</b>  <code>{city}</code>\n\
+    <b>• 🏙Nome Regione :</b>  <code>{region}</code> [<code>{region_code}</code>]\n\
+    <b>• 🗺Nome Nazione :</b>  <code>{country}</code> [<code>{country_code}</code>]\n\
+    <b>• 🇺🇳Nome Continente :</b>  <code>{continent}</code> [<code>{continent_code}</code>]\n\
+    <b>• 🖼Visualizza su Google Maps :  <a href = https://www.google.com/maps/search/?api=1&query={latitude}%2C{longitude}>Google Map</a></b>\n\
+    <b>• 📨Codice postale :</b> <code>{postal}</code>\n\
+    <b>• 📞Prefisso :</b>  <code>+{calling_code}</code>\n\
+    <b>• ☎️Operatore Telefonico :  <a href = https://www.{carriel}>{' '.join(carrier.split()[:2])}</a></b>\n\
+    <b>• 💬Lingua :</b>  {language1} {lang2}\n\
+    <b>• 💵Moneta :</b>  <code>{currency}</code> [<code>{symbol}{currcode}</code>]\n\
+    <b>• ⏰Time Zone :</b> <code>{time_zone}</code> [<code>{time_z}</code>]\n\
+    <b>• 🕰Orario :</b> <code>{current_time[11:16]}</code>\n\
+    <b>• 📅Data :</b> <code>{current_time[:10]}</code>\n\
+    <b>• ⏱Fusoriario :</b> <code>{current_time[-6:]}</code>"
     await edit_or_reply(event, string, parse_mode="html")
 
 
