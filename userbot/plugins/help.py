@@ -233,15 +233,6 @@ async def _(event):
 async def _(event):
     "To get dc of your bot"
     result = await event.client(functions.help.GetNearestDcRequest())
-    result = f"**Dc details of your account:**\
-              \n**Country :** {result.country}\
-              \n**Current Dc :** {result.this_dc}\
-              \n**Nearest Dc :** {result.nearest_dc}\
-              \n\n**List Of Telegram Data Centres:**\
-              \n**DC1 : **Miami FL, USA\
-              \n**DC2 :** Amsterdam, NL\
-              \n**DC3 :** Miami FL, USA\
-              \n**DC4 :** Amsterdam, NL\
-              \n**DC5 : **Singapore, SG\
-                "
+    result = f"**Data Center :** {result.this_dc}**\
+              "
     await edit_or_reply(event, result)
