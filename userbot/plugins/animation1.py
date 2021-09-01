@@ -302,3 +302,21 @@ async def _(event):
         \nnBattery Percentage:` [100%](https://telegra.ph/file/a45aa7450c8eefed599d9.mp4) ",
         link_preview=True,
     )
+
+    
+@catub.cat_cmd(
+    pattern="dissociamento$",
+    command=("dissociamento", plugin_category),
+    info={
+        "header": "Per dissociarsi",
+        "usage": "{tr}dissociamento",
+    },
+)
+async def _(event):
+    "animation command"
+    event = await edit_or_reply(event, "dissociamento")
+    await event.edit("🔊Inizio dissociamento🔊")
+    await asyncio.sleep(0.3)
+    await event.edit("🔄Dissociamento in corso🔄")
+    await asyncio.sleep(0.4)
+    await event.edit("✅Dissociamento completato✅")
