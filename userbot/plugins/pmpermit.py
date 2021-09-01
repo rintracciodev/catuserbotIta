@@ -711,7 +711,7 @@ async def approve_p_m(event):  # sourcery no-metrics
             sqllist.rm_from_list("pmoptions", chat.id)
         await edit_delete(
             event,
-            f"__Approved to pm__ [{user.first_name}](tg://user?id={user.id})\n**Reason :** __{reason}__",
+            f"__La chat con__ [{user.first_name}](tg://user?id={user.id}) è stata approvata con successo ☑️\n**Motivazione :** __{reason}__",
         )
         try:
             PMMESSAGE_CACHE = sql.get_collection("pmmessagecache").json
