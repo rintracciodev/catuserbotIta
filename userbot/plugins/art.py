@@ -396,6 +396,18 @@ X = (
 )
 
 
+Y = (
+    "┈┈┏━╮╭━┓┈╭━━━━━━━━━━━━━━━━━━━━━━━━━━━╮\n"
+    "┈┈┃┏┗┛┓┃╭┫Mi chiamo Vederico Vaiana !┃\n"
+    "┈┈╰┓▋▋┏╯╯╰━━━━━━━━━━━━━━━━━━━━━━━━━╯\n"
+    "┈╭━┻╮╲┗━━━━╮╭╮┈\n"
+    "┈┃▎▎┃╲╲╲╲╲╲┣━╯┈\n"
+    "┈╰━┳┻▅╯╲╲╲╲┃┈┈┈\n"
+    "┈┈┈╰━┳┓┏┳┓┏╯┈┈┈\n"
+    "┈┈┈┈┈┗┻┛┗┻┛┈┈┈┈\n"
+)    
+
+
 @catub.cat_cmd(   
     pattern="monster$",
     command=("monster", plugin_category),
@@ -654,3 +666,16 @@ async def bluedevilmm(mm):
 async def bluedevilmotivi(motivi):
     "fun art command"
     await edit_or_reply(motivi, X)
+
+    
+@catub.cat_cmd(
+    pattern="porco$",
+    command=("porco", plugin_category),
+    info={
+        "header": "Per avere un ritratto dei Federico Vaiana",
+        "usage": "{tr}porco",
+    },
+)
+async def bluedevilporco(porco):
+    "fun art command"
+    await edit_or_reply(porco, Y)
