@@ -318,5 +318,5 @@ async def _(event):
     await event.edit("🔊Inizio dissociamento🔊")
     await asyncio.sleep(0.3)
     await event.edit("🔄Dissociamento in corso🔄")
-    await asyncio.sleep(0.4)
+    await asyncio.sleep(0.6)
     await event.edit("✅Dissociamento completato✅")
