@@ -732,7 +732,7 @@ async def approve_p_m(event):  # sourcery no-metrics
     else:
         await edit_delete(
             event,
-            f"[{user.first_name}](tg://user?id={user.id}) __is already in approved list__",
+            f"[{user.first_name}](tg://user?id={user.id}) __è già stato/a approvato/a 🔈__",
         )
 
 
@@ -778,12 +778,12 @@ async def disapprove_p_m(event):
         pmpermit_sql.disapprove(user.id)
         await edit_or_reply(
             event,
-            f"[{user.first_name}](tg://user?id={user.id}) __is disapproved to personal message me.__\n**Reason:**__ {reason}__",
+            f"[{user.first_name}](tg://user?id={user.id}) __disapprovato/a con sucesso 🔇.__\n**Motivazione:**__ {reason}__",
         )
     else:
         await edit_delete(
             event,
-            f"[{user.first_name}](tg://user?id={user.id}) __is not yet approved__",
+            f"[{user.first_name}](tg://user?id={user.id}) __non è approvato/a__",
         )
 
 
@@ -899,7 +899,7 @@ async def approve_p_m(event):
         for user in approved_users:
             APPROVED_PMs += f"• 👤 {_format.mentionuser(user.first_name , user.user_id)}\n**ID:** `{user.user_id}`\n**UserName:** @{user.username}\n**Date: **__{user.date}__\n**Reason: **__{user.reason}__\n\n"
     else:
-        APPROVED_PMs = "`You haven't approved anyone yet`"
+        APPROVED_PMs = "`Non hai ancora approvato qualcuno`"
     await edit_or_reply(
         event,
         APPROVED_PMs,
