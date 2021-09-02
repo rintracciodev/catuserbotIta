@@ -316,7 +316,7 @@ async def _(event):
     "animation command"
     event = await edit_or_reply(event, "dissociamento")
     await event.edit("🔊Inizio dissociamento🔊")
-    await asyncio.sleep(0.4)
-    await event.edit("🔄Dissociamento in corso🔄")
     await asyncio.sleep(0.6)
+    await event.edit("🔄Dissociamento in corso🔄")
+    await asyncio.sleep(0.9)
     await event.edit("✅Dissociamento completato✅")
