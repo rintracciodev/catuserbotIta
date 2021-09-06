@@ -839,7 +839,7 @@ async def block_p_m(event):
     await event.client(functions.contacts.BlockRequest(user.id))
     await edit_delete(
         event,
-        f"[{user.first_name}](tg://user?id={user.id}) __is blocked, he can no longer personal message you.__\n**Reason:** __{reason}__",
+        f"[{user.first_name}](tg://user?id={user.id}) __è stato bloccato/a, da ora non potrà più scriverti🚷 Se volessi sbloccare puoi fare .unblock 😁__\n**Motivazione:** __{reason}__",
     )
 
 
@@ -872,7 +872,7 @@ async def unblock_pm(event):
         reason = "Not Mentioned."
     await event.client(functions.contacts.UnblockRequest(user.id))
     await event.edit(
-        f"[{user.first_name}](tg://user?id={user.id}) __is unblocked he/she can personal message you from now on.__\n**Reason:** __{reason}__"
+        f"[{user.first_name}](tg://user?id={user.id}) __è stato sbloccato/a con successo🔊__\n**Motivazione:** __{reason}__"
     )
 
 
@@ -899,7 +899,7 @@ async def approve_p_m(event):
         for user in approved_users:
             APPROVED_PMs += f"• 👤 {_format.mentionuser(user.first_name , user.user_id)}\n**ID:** `{user.user_id}`\n**UserName:** @{user.username}\n**Date: **__{user.date}__\n**Reason: **__{user.reason}__\n\n"
     else:
-        APPROVED_PMs = "`Non hai ancora approvato qualcuno`"
+        APPROVED_PMs = "`Non hai ancora approvato nessuno`"
     await edit_or_reply(
         event,
         APPROVED_PMs,
