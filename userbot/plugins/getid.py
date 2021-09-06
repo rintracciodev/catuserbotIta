@@ -54,7 +54,7 @@ async def _(event):
         else:
             await edit_or_reply(
                 event,
-                f"[{user.first_name}](tg://user?id={user.id}): **`{r_msg.sender_id}`",
+                f"[{user.first_name}](tg://user?id={user.id}) : **`{r_msg.sender_id}`",
             )
 
     else:
