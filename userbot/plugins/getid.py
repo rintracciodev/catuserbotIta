@@ -31,7 +31,7 @@ async def _(event):
         try:
             if p.first_name:
                 return await edit_or_reply(
-                    event, f" `{input_str}` : `{p.id}`"
+                    event, f"[{user.first_name}](tg://user?id={user.id}) : `{p.id}`"
                 )
         except Exception:
             try:
