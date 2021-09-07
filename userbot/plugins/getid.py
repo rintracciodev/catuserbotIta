@@ -31,13 +31,13 @@ async def _(event):
         try:
             if p.first_name:
                 return await edit_or_reply(
-                    event, f" </b> {_format.mentionuser(sender.first_name , sender.id)} : `{p.id}`"
+                    event, f" `{input_str}` : `{p.id}`"
                 )
         except Exception:
             try:
                 if p.title:
                     return await edit_or_reply(
-                        event, f"The id of the chat/channel `{p.title}` is `{p.id}`"
+                        event, f"📢L'ID del canale/chat `{p.title}` è `{p.id}`"
                     )
             except Exception as e:
                 LOGS.info(str(e))
@@ -58,4 +58,4 @@ async def _(event):
             )
 
     else:
-        await edit_or_reply(event, f"**Current Chat ID : **`{event.chat_id}`")
+        await edit_or_reply(event, f"**💬ID Chat Attuale : **`{event.chat_id}`")
