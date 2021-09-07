@@ -90,7 +90,7 @@ async def log_tagged_messages(event):
     resalt = f"#TAG \n<b>🌐Gruppo : </b><code>{hmm.title}</code>"
     if full is not None:
         resalt += (
-            f"\n<b>🔊Sei stato taggato da : </b> 👤{_format.htmlmentionuser(full.first_name , full.id)}"
+            f"\n<b>🔊Sei stato taggato da : </b> {_format.htmlmentionuser(full.first_name , full.id)}"
         )
     if messaget is not None:
         resalt += f"\n<b>Message type : </b><code>{messaget}</code>"
