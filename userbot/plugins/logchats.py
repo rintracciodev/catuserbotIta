@@ -55,7 +55,7 @@ async def monito_p_m_s(event):  # sourcery no-metrics
                     LOG_CHATS_.COUNT = 0
                 LOG_CHATS_.NEWPM = await event.client.send_message(
                     Config.PM_LOGGER_GROUP_ID,
-                    f"👤{_format.mentionuser(sender.first_name , sender.id)} has sent a new message \nId : `{chat.id}`",
+                    f"👤L'utente {_format.mentionuser(sender.first_name , sender.id)} ti ha inviato un nuovo messaggio💬 \n🆔 : `{chat.id}`",
                 )
             try:
                 if event.message:
@@ -87,16 +87,16 @@ async def log_tagged_messages(event):
     except Exception as e:
         LOGS.info(str(e))
     messaget = media_type(event)
-    resalt = f"#TAGS \n<b>Group : </b><code>{hmm.title}</code>"
+    resalt = f"#TAG \n<b>🌐Gruppo : </b><code>{hmm.title}</code>"
     if full is not None:
         resalt += (
-            f"\n<b>From : </b> 👤{_format.htmlmentionuser(full.first_name , full.id)}"
+            f"\n<b>🔊Sei stato taggato da : </b> 👤{_format.htmlmentionuser(full.first_name , full.id)}"
         )
     if messaget is not None:
         resalt += f"\n<b>Message type : </b><code>{messaget}</code>"
     else:
-        resalt += f"\n<b>Message : </b>{event.message.message}"
-    resalt += f"\n<b>Message link: </b><a href = 'https://t.me/c/{hmm.id}/{event.message.id}'> link</a>"
+        resalt += f"\n<b>📑Messaggio : </b>{event.message.message}"
+    resalt += f"\n<b>🔗Link Messaggio : </b><a href = 'https://t.me/c/{hmm.id}/{event.message.id}'> link</a>"
     if not event.is_private:
         await event.client.send_message(
             Config.PM_LOGGER_GROUP_ID,
@@ -254,12 +254,12 @@ async def set_grplog(event):
         GRPLOG = True
     if GRPLOG:
         if h_type:
-            await event.edit("`Group logging is already enabled`")
+            await event.edit("`I Log dei Tag nei gruppi sono già stati abilitati`")
         else:
             addgvar("GRPLOG", h_type)
-            await event.edit("`Group logging is disabled`")
+            await event.edit("`Log dei Tag nei gruppi disabilitati con successo☑️`")
     elif h_type:
         addgvar("GRPLOG", h_type)
-        await event.edit("`Group logging is enabled`")
+        await event.edit("`Log dei Tag nei gruppi abilitati con successo☑️`")
     else:
-        await event.edit("`Group logging is already disabled`")
+        await event.edit("`I Log dei Tag nei gruppi sono già stati abilitati`")
