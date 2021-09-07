@@ -31,7 +31,7 @@ async def _(event):
         try:
             if p.first_name:
                 return await edit_or_reply(
-                    event, f" {_format.mentionuser(sender.first_name , sender.id)} : `{p.id}`"
+                    event, f" </b> {_format.mentionuser(sender.first_name , sender.id)} : `{p.id}`"
                 )
         except Exception:
             try:
