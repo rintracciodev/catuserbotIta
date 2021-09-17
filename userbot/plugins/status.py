@@ -70,31 +70,29 @@ async def pussy(event):
         "usage": "{tr}on",
     },
 )
-async def pussy(event):
-    "make yourself offline"
+async def cat(event):
+    "make yourself online"
     user = await event.client.get_entity("me")
     if user.first_name.startswith(ONLINE_TAG):
-        return await edit_delete(event, "**Modalità Offline già attivata ❕**")
-    await edit_or_reply(event, "**🔄Sto cambiando il profilo a offline🔄**")
-    )
-    if photo:
-        file = await event.client.upload_file(photo)
-        try:
-            await event.client(functions.photos.UploadProfilePhotoRequest(file))
-        except Exception as e:  # pylint:disable=C0103,W0703
-            await edit_or_reply(event, str(e))
-        else:
-            await edit_or_reply(event, "**Profilo cambiato a offline 📌**")
-    os.remove(photo)
-    first_name = user.first_name
-    addgvar("my_first_name", first_name)
-    last_name = user.last_name
-    if last_name:
-        addgvar("my_last_name", last_name)
-    tag_name = ONLINE_TAG
+        await edit_or_reply(event, "**🔄Sto cambiando il profilo a online🔄**")
+    else:
+        await edit_delete(event, "**Modalità Online già attivata ❕**")
+        return
+    try:
+        await event.client(
+            functions.photos.DeletePhotosRequest(
+                await event.client.get_profile_photos("me", limit=1)
+            )
+        )
+    except Exception as e:  # pylint:disable=C0103,W0703
+        await edit_or_reply(event, str(e))
+    else:
+        await edit_or_reply(event, "**💡Profilo cambiato a Online**")
+    first_name = gvarstatus("my_first_name")
+    last_name = gvarstatus("my_last_name") or ""
     await event.client(
         functions.account.UpdateProfileRequest(
-            last_name=first_name, first_name=tag_name
+            last_name=last_name, first_name=first_name
         )
     )
-    await edit_delete(event, f"**`{tag_name} {first_name}`\nOra sono offline 🚫**")
+    await edit_delete(event, f"**`{first_name} {last_name}`\nOra sono Online 🔌**")
