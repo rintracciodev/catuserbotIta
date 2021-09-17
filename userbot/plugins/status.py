@@ -14,9 +14,6 @@ plugin_category = "utils"
 OFFLINE_TAG = "[OFFLINE]"
 
 
-ONLINE_TAG = "[ONLINE]"
-
-
 @catub.cat_cmd(
     pattern="off$",
     command=("off", plugin_category),
@@ -73,7 +70,7 @@ async def pussy(event):
 async def cat(event):
     "make yourself online"
     user = await event.client.get_entity("me")
-    if user.first_name.startswith(ONLINE_TAG):
+    if user.first_name.startswith(OFFLINE_TAG):
         await edit_or_reply(event, "**🔄Sto cambiando il profilo a online🔄**")
     else:
         await edit_delete(event, "**Modalità Online già attivata ❕**")
