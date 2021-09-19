@@ -15,20 +15,20 @@ OFFLINE_TAG = "[OFFLINE]"
 
 
 @catub.cat_cmd(
-    pattern="offline$",
-    command=("offline", plugin_category),
+    pattern="off$",
+    command=("off", plugin_category),
     info={
         "header": "To your status as offline",
         "description": " it change your pic as offline, and add offline tag in name.",
-        "usage": "{tr}offline",
+        "usage": "{tr}off",
     },
 )
 async def pussy(event):
     "make yourself offline"
     user = await event.client.get_entity("me")
     if user.first_name.startswith(OFFLINE_TAG):
-        return await edit_delete(event, "**Already in Offline Mode.**")
-    await edit_or_reply(event, "**Changing Profile to Offline...**")
+        return await edit_delete(event, "**Modalità Offline già attivata ❕**")
+    await edit_or_reply(event, "**🔄Sto cambiando il profilo a offline🔄**")
     photo = "./temp/donottouch.jpg"
     if not os.path.isdir("./temp"):
         os.mkdir("./temp")
@@ -42,7 +42,7 @@ async def pussy(event):
         except Exception as e:  # pylint:disable=C0103,W0703
             await edit_or_reply(event, str(e))
         else:
-            await edit_or_reply(event, "**Changed profile to OffLine.**")
+            await edit_or_reply(event, "**Profilo cambiato a offline 📌**")
     os.remove(photo)
     first_name = user.first_name
     addgvar("my_first_name", first_name)
@@ -55,25 +55,25 @@ async def pussy(event):
             last_name=first_name, first_name=tag_name
         )
     )
-    await edit_delete(event, f"**`{tag_name} {first_name}`\nI am Offline now.**")
+    await edit_delete(event, f"**`{tag_name} {first_name}`\nOra sono offline 🚫**")
 
 
 @catub.cat_cmd(
-    pattern="online$",
-    command=("online", plugin_category),
+    pattern="on$",
+    command=("on", plugin_category),
     info={
         "header": "To your status as online",
         "description": " it change your pic back normal, and remove offline tag in name.",
-        "usage": "{tr}online",
+        "usage": "{tr}on",
     },
 )
 async def cat(event):
     "make yourself online"
     user = await event.client.get_entity("me")
     if user.first_name.startswith(OFFLINE_TAG):
-        await edit_or_reply(event, "**Changing Profile to Online...**")
+        await edit_or_reply(event, "**🔄Sto cambiando il profilo a online🔄**")
     else:
-        await edit_delete(event, "**Already Online.**")
+        await edit_delete(event, "**Modalità Online già attivata ❕**")
         return
     try:
         await event.client(
@@ -84,7 +84,7 @@ async def cat(event):
     except Exception as e:  # pylint:disable=C0103,W0703
         await edit_or_reply(event, str(e))
     else:
-        await edit_or_reply(event, "**Changed profile to Online.**")
+        await edit_or_reply(event, "**💡Profilo cambiato a Online**")
     first_name = gvarstatus("my_first_name")
     last_name = gvarstatus("my_last_name") or ""
     await event.client(
@@ -92,4 +92,4 @@ async def cat(event):
             last_name=last_name, first_name=first_name
         )
     )
-    await edit_delete(event, f"**`{first_name} {last_name}`\nI am Online !**")
+    await edit_delete(event, f"**`{first_name} {last_name}`\nOra sono Online 🔌**")
