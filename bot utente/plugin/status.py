@@ -11,7 +11,7 @@ from ..sql_helper.globals import addgvar, gvarstatus
 plugin_category = "utils"
 
 
-OFFLINE_TAG = "❌|"
+OFFLINE_TAG = "❌ |"
 
 
 @catub.cat_cmd(
