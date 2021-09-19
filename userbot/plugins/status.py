@@ -11,7 +11,7 @@ from ..sql_helper.globals import addgvar, gvarstatus
 plugin_category = "utils"
 
 
-OFFLINE_TAG = "| ❌"
+OFFLINE_TAG = "❌|"
 
 
 @catub.cat_cmd(
@@ -45,10 +45,10 @@ async def pussy(event):
             await edit_or_reply(event, "**Profilo cambiato a offline 📌**")
     os.remove(photo)
     first_name = user.first_name
-    addgvar("my_first_name", last_name)
+    addgvar("my_first_name", first_name)
     last_name = user.last_name
     if last_name:
-        addgvar("my_last_name", first_name)
+        addgvar("my_last_name", last_name)
     tag_name = OFFLINE_TAG
     await event.client(
         functions.account.UpdateProfileRequest(
