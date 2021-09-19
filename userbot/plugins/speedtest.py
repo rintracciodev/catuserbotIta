@@ -103,7 +103,7 @@ async def _(event):
             await event.delete()
     except Exception as exc:
         await catevent.edit(
-            """**SpeedTest** completed in {} seconds
+            """**SpeedTest** completato in {} secondi
 Download: {} (or) {} MB/s
 Upload: {} (or) {} MB/s
 Ping: {} ms
