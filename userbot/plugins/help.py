@@ -196,7 +196,7 @@ async def _(event):
             outstr += f"  - `{cmdprefix}{cmd}`\n"
         outstr += f"**👩‍💻 Usage : ** `{cmdprefix}help -c <command name>`"
     await edit_or_reply(
-        event, outstr, aslink=True, linktext="Total Commands of Catuserbot are :"
+        event, outstr, aslink=True, linktext="🗂Ecco la lista di tutti i comandi del tuo userbot :"
     )
 
 
@@ -214,7 +214,7 @@ async def _(event):
     found = [i for i in sorted(list(CMD_INFO)) if cmd in i]
     if found:
         out_str = "".join(f"`{i}`    " for i in found)
-        out = f"**I found {len(found)} command(s) for: **`{cmd}`\n\n{out_str}"
+        out = f"**🔍 Ho trovato {len(found)} comando/i per: **`{cmd}`\n\n{out_str}"
         out += f"\n\n__For more info check {cmdprefix}help -c <command>__"
     else:
         out = f"I can't find any such command `{cmd}` in CatUserbot"
