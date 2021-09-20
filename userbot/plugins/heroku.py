@@ -62,7 +62,7 @@ async def variable(var):  # sourcery no-metrics
     exe = var.pattern_match.group(1)
     heroku_var = app.config()
     if exe == "get":
-        cat = await edit_or_reply(var, "`Getting information...`")
+        cat = await edit_or_reply(var, "`Raccogliendo informazioni...`")
         await asyncio.sleep(1.0)
         try:
             variable = var.pattern_match.group(2).split()[0]
@@ -89,7 +89,7 @@ async def variable(var):  # sourcery no-metrics
             os.remove("configs.json")
     elif exe == "set":
         variable = "".join(var.text.split(maxsplit=2)[2:])
-        cat = await edit_or_reply(var, "`Setting information...`")
+        cat = await edit_or_reply(var, "`Impostando il nuovo var...`")
         if not variable:
             return await cat.edit("`.set var <ConfigVars-name> <value>`")
         value = "".join(variable.split(maxsplit=1)[1:])
@@ -98,7 +98,7 @@ async def variable(var):  # sourcery no-metrics
             return await cat.edit("`.set var <ConfigVars-name> <value>`")
         await asyncio.sleep(1.5)
         if variable in heroku_var:
-            await cat.edit(f"`{variable}` **successfully changed to  ->  **`{value}`")
+            await cat.edit(f"`{variable}` **cambiato con usccesso a  ->  **`{value}`")
         else:
             await cat.edit(
                 f"`{variable}`**  successfully added with value`  ->  **{value}`"
@@ -109,12 +109,12 @@ async def variable(var):  # sourcery no-metrics
         try:
             variable = var.pattern_match.group(2).split()[0]
         except IndexError:
-            return await cat.edit("`Please specify ConfigVars you want to delete`")
+            return await cat.edit("`Specifica il Var che vuoi eliminare`")
         await asyncio.sleep(1.5)
         if variable not in heroku_var:
             return await cat.edit(f"`{variable}`**  does not exist**")
 
-        await cat.edit(f"`{variable}`  **successfully deleted**")
+        await cat.edit(f"`{variable}`  **eliminata con successo**")
         del heroku_var[variable]
 
 
