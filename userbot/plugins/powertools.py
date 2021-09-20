@@ -30,7 +30,7 @@ plugin_category = "tools"
 async def _(event):
     "Restarts the bot !!"
     if BOTLOG:
-        await event.client.send_message(BOTLOG_CHATID, "#RIAVVO \n" "Bot Riavviato")
+        await event.client.send_message(BOTLOG_CHATID, "#RIAVVIO \n" "Bot Riavviato")
     sandy = await edit_or_reply(
         event,
         "🔄Riavvio. Esegui `.ping` `.help` o `.alive` per controllare se sono online👁‍🗨, impiegherò 1-2 minuti per riavviarmi❕",
