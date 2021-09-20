@@ -19,18 +19,18 @@ plugin_category = "tools"
 
 
 @catub.cat_cmd(
-    pattern="restart$",
-    command=("restart", plugin_category),
+    pattern="riavvio$",
+    command=("riavvio", plugin_category),
     info={
         "header": "Restarts the bot !!",
-        "usage": "{tr}restart",
+        "usage": "{tr}riavvio",
     },
     disable_errors=True,
 )
 async def _(event):
     "Restarts the bot !!"
     if BOTLOG:
-        await event.client.send_message(BOTLOG_CHATID, "#RIAVVO \n" "Bot Restarted")
+        await event.client.send_message(BOTLOG_CHATID, "#RIAVVO \n" "Bot Riavviato")
     sandy = await edit_or_reply(
         event,
         "🔄Riavvio. Esegui `.ping` `.help` o `.alive` per controllare se sono online👁‍🗨, impiegherò 1-2 minuti per riavviarmi❕",
@@ -56,18 +56,18 @@ async def _(event):
 
 
 @catub.cat_cmd(
-    pattern="shutdown$",
-    command=("shutdown", plugin_category),
+    pattern="spegni$",
+    command=("spegni", plugin_category),
     info={
         "header": "Shutdowns the bot !!",
         "description": "To turn off the dyno of heroku. you cant turn on by bot you need to got to heroku and turn on or use @hk_heroku_bot",
-        "usage": "{tr}shutdown",
+        "usage": "{tr}spegni",
     },
 )
 async def _(event):
     "Shutdowns the bot"
     if BOTLOG:
-        await event.client.send_message(BOTLOG_CHATID, "#SHUTDOWN \n" "Bot shut down")
+        await event.client.send_message(BOTLOG_CHATID, "#SPENTO \n" "Bot shut down")
     await edit_or_reply(event, "`⚠️Mi sto spegnendo...Per riattivarmi dovrai farlo manualmente su Heroku`")
     if HEROKU_APP is not None:
         HEROKU_APP.process_formation()["worker"].scale(0)
@@ -94,19 +94,19 @@ async def _(event):
             BOTLOG_CHATID,
             "You put the bot to sleep for " + str(counter) + " seconds",
         )
-    event = await edit_or_reply(event, f"`ok, let me sleep for {counter} seconds`")
+    event = await edit_or_reply(event, f"`💤Ok, non funzionerò per {counter} secondi`")
     sleep(counter)
-    await event.edit("`OK, I'm awake now.`")
+    await event.edit("`Eccomi ! Sono tornato 😁`")
 
 
 @catub.cat_cmd(
-    pattern="notify (on|off)$",
-    command=("notify", plugin_category),
+    pattern="notifiche (on|off)$",
+    command=("notifiche", plugin_category),
     info={
         "header": "To update the your chat after restart or reload .",
-        "description": "Will send the ping cmd as reply to the previous last msg of (restart/reload/update cmds).",
+        "description": "Per notificare i comandi .riavvio .update ecc...",
         "usage": [
-            "{tr}notify <on/off>",
+            "{tr}notifiche <on/off>",
         ],
     },
 )
@@ -115,10 +115,10 @@ async def set_pmlog(event):
     input_str = event.pattern_match.group(1)
     if input_str == "off":
         if gvarstatus("restartupdate") is None:
-            return await edit_delete(event, "__Notify was already disabled__")
+            return await edit_delete(event, "__Le notifiche sono già disabilitate.__")
         delgvar("restartupdate")
-        return await edit_or_reply(event, "__Notify was disabled successfully.__")
+        return await edit_or_reply(event, "__Notifiche disabilitate con successo.__")
     if gvarstatus("restartupdate") is None:
         addgvar("restartupdate", "turn-oned")
-        return await edit_or_reply(event, "__Notify was enabled successfully.__")
-    await edit_delete(event, "__Notify was already enabled.__")
+        return await edit_or_reply(event, "__Notifiche abilitate con successo.__")
+    await edit_delete(event, "__Le notifiche sono già abilitate.__")
