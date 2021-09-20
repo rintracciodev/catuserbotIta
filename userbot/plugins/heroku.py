@@ -177,12 +177,12 @@ async def dyno_usage(dyno):
     AppMinutes = math.floor(AppQuotaUsed % 60)
     await asyncio.sleep(1.5)
     return await dyno.edit(
-        "**Dyno Usage**:\n\n"
-        f" -> `🧰Dynos usato per`  **{Config.HEROKU_APP_NAME}**:\n"
+        "**📊Dynos Usato**:\n\n"
+        f" -> `🧰 Dynos usato per`  **{Config.HEROKU_APP_NAME}**:\n"
         f"     •  `{AppHours}`**h**  `{AppMinutes}`**m**  "
         f"**|**  [`{AppPercentage}`**%**]"
         "\n\n"
-        " -> `🗓Dynos rimanente per questo mese`:\n"
+        " -> `🗓 Dynos rimanente per questo mese`:\n"
         f"     •  `{hours}`**h**  `{minutes}`**m**  "
         f"**|**  [`{percentage}`**%**]"
     )
