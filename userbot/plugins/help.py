@@ -57,14 +57,14 @@ async def cmdinfo(input_str, event, plugin=False):
     except Exception as e:
         await edit_delete(event, f"**Error**\n`{e}`")
         return None
-    outstr = f"**Command :** `{cmdprefix}{input_str}`\n"
+    outstr = f"**📍Comando :** `{cmdprefix}{input_str}`\n"
     plugin = get_key(input_str)
     if plugin is not None:
-        outstr += f"**Plugin :** `{plugin}`\n"
+        outstr += f"**📖Plugin :** `{plugin}`\n"
         category = getkey(plugin)
         if category is not None:
-            outstr += f"**Category :** `{category}`\n\n"
-    outstr += f"**✘  Intro :**\n{about[0]}"
+            outstr += f"**📋Categoria :** `{category}`\n\n"
+    outstr += f"**✘  Spiegazione comando :**\n{about[0]}"
     return outstr
 
 
@@ -121,7 +121,7 @@ async def cmdlist():
             for cmd in sorted(cmds):
                 outstr += f"  - `{cmdprefix}{cmd}`\n"
             outstr += "\n"
-    outstr += f"**👩‍💻 Usage : ** `{cmdprefix}help -c <command name>`"
+    outstr += f"**👩‍💻 Usa : ** `{cmdprefix}help -c <comando>`"
     return outstr
 
 
