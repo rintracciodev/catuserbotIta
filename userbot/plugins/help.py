@@ -47,11 +47,11 @@ async def cmdinfo(input_str, event, plugin=False):
         if plugin:
             await edit_delete(
                 event,
-                f"**There is no plugin or command as **`{input_str}`** in your bot.**",
+                f"**🔇Non c'è nessun plugin o comando chiamato **`{input_str}`** nel tuo userbot.**",
             )
             return None
         await edit_delete(
-            event, f"**There is no command as **`{input_str}`** in your bot.**"
+            event, f"**🔇Non c'è nessun plugin o comando chiamato **`{input_str}`** nel tuo userbot.**"
         )
         return None
     except Exception as e:
@@ -80,19 +80,19 @@ async def plugininfo(input_str, event, flag):
     if len(cmds) == 1 and (flag is None or (flag and flag != "-p")):
         outstr = await cmdinfo(cmds[0], event, plugin=False)
         return outstr
-    outstr = f"**Plugin : **`{input_str}`\n"
-    outstr += f"**Commands Available :** `{len(cmds)}`\n"
+    outstr = f"**📖Plugin : **`{input_str}`\n"
+    outstr += f"**📍Comandi disponibili :** `{len(cmds)}`\n"
     category = getkey(input_str)
     if category is not None:
-        outstr += f"**Category :** `{category}`\n\n"
+        outstr += f"**📋Categoria :** `{category}`\n\n"
     for cmd in sorted(cmds):
-        outstr += f"•  **cmd :** `{cmdprefix}{cmd}`\n"
+        outstr += f"•  **💬Comando :** `{cmdprefix}{cmd}`\n"
         try:
-            outstr += f"•  **info :** `{CMD_INFO[cmd][1]}`\n\n"
+            outstr += f"•  **🔎Info :** `{CMD_INFO[cmd][1]}`\n\n"
         except IndexError:
-            outstr += "•  **info :** `None`\n\n"
-    outstr += f"**👩‍💻 Usage : ** `{cmdprefix}help <command name>`\
-        \n**Note : **If command name is same as plugin name then use this `{cmdprefix}help -c <command name>`."
+            outstr += "•  **🔎Info :** `None`\n\n"
+    outstr += f"**👩‍💻 Esegui : ** `{cmdprefix}help <command name>`\
+        \n**❗Nota : **📝Per avere le informazioni di uno di questi comandi scrivi `{cmdprefix}help -c <comando>`."
     return outstr
 
 
@@ -217,7 +217,7 @@ async def _(event):
         out = f"**🔍 Ho trovato {len(found)} comando/i per: **`{cmd}`\n\n{out_str}"
         out += f"\n\n__❔Per maggiori informazioni fai {cmdprefix}help -c <comando>__"
     else:
-        out = f"I can't find any such command `{cmd}` in CatUserbot"
+        out = f"📌Non ho trovato nessun comando chiamato `{cmd}` nel tuo userbot"
     await edit_or_reply(event, out)
 
 
