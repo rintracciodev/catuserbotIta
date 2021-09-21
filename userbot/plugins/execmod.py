@@ -40,12 +40,12 @@ async def _(event):
 
 
 @catub.cat_cmd(
-    pattern="env$",
-    command=("env", plugin_category),
+    pattern="vars$",
+    command=("vars", plugin_category),
     info={
         "header": "To list all environment values in userbot.",
         "description": "to show all heroku vars/Config values in your userbot",
-        "usage": "{tr}env",
+        "usage": "{tr}vars",
     },
 )
 async def _(event):
@@ -53,7 +53,7 @@ async def _(event):
     cmd = "env"
     o = (await _catutils.runcmd(cmd))[0]
     OUTPUT = (
-        f"**[Cat's](tg://need_update_for_some_feature/) Environment Module:**\n\n\n{o}"
+        f"**[Questi sono i Var](tg://need_update_for_some_feature/) del tuo userbot:**\n\n\n{o}"
     )
     await edit_or_reply(event, OUTPUT)
 
@@ -71,17 +71,17 @@ async def _(event):
     reply = await event.get_reply_message()
     if not reply or not reply.text:
         return await edit_delete(
-            event, "__Reply to text message to get text without markdown formating.__"
+            event, "__Rispondi a un messaggio di testo per ottenere il testo senza la formattazione markdown.__"
         )
     await edit_or_reply(event, reply.text, parse_mode=parse_pre)
 
 
 @catub.cat_cmd(
-    pattern="when$",
-    command=("when", plugin_category),
+    pattern="data$",
+    command=("data", plugin_category),
     info={
         "header": "To get date and time of message when it posted.",
-        "usage": "{tr}when <reply>",
+        "usage": "{tr}data <rispondi a un messaggio>",
     },
 )
 async def _(event):
@@ -95,5 +95,5 @@ async def _(event):
     else:
         result = event.date
     await edit_or_reply(
-        event, f"**This message was posted on :** `{yaml_format(result)}`"
+        event, f"**📅Questo messaggio è stato inviato il :** `{yaml_format(result)}`"
     )
