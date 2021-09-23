@@ -80,12 +80,12 @@ async def amireallyalive(event):
 
 
 temp = """{ALIVE_TEXT}
-**{EMOJI} Database :** `{dbhealth}`
-**{EMOJI} Versione Telethon :** `{telever}`
-**{EMOJI} Versione CatUserBot :** `{catver}`
-**{EMOJI} Versione Python :** `{pyver}`
-**{EMOJI} Online da :** `{uptime}`
-**{EMOJI} Creatore :** {mention}"""
+**{EMOJI} 🧿Database :** `{dbhealth}`
+**{EMOJI} 💶Versione Telethon :** `{telever}`
+**{EMOJI} 📡Versione CatUserBot :** `{catver}`
+**{EMOJI} 🧑‍💻Versione Python :** `{pyver}`
+**{EMOJI} 🛡️Online da :** `{uptime}`
+**{EMOJI} 👑Creatore :** {mention}"""
 
 
 @catub.cat_cmd(
