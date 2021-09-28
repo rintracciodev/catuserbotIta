@@ -408,6 +408,17 @@ Y = (
 )    
 
 
+M = (
+    "╭━━━━━━━━━━━━━╮\n"
+    "┃╱╱╱╱╱╱╱╱┏┓╱╱╱┃\n"
+    "┃╱╱╱┏┓╱╱┏╯┃╱╱╱┃\n"
+    "┃╱╱┏┛┗┓╱┗┓┃╱╱╱┃\n"
+    "┃╱╱┗┓┏┛╱╱┃┃╱╱╱┃\n"
+    "┃╱╱╱┗┛╱╱╱┃┃╱╱╱┃\n"
+    "┃╱╱╱╱╱╱╱╱┗┛╱╱╱┃\n"
+    "╰━━━━━━━━━━━━━ \n"
+    
+    
 @catub.cat_cmd(   
     pattern="monster$",
     command=("monster", plugin_category),
@@ -679,3 +690,17 @@ async def bluedevilmotivi(motivi):
 async def bluedevilporco(porco):
     "fun art command"
     await edit_or_reply(porco, Y)
+
+    
+    
+@catub.cat_cmd(
+    pattern="+1$",
+    command=("+1", plugin_category),
+    info={
+        "header": "Per avere un ritratto dei Federico Vaiana",
+        "usage": "{tr}+1",
+    },
+)
+async def bluedevil+1(+1):
+    "fun art command"
+    await edit_or_reply(+1, M)
