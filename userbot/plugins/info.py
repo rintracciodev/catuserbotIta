@@ -38,7 +38,7 @@ async def fetch_info(replied_user, event):
     try:
         dc_id, location = get_input_location(replied_user.profile_photo)
     except Exception:
-        dc_id = "Couldn't fetch DC ID!"
+        dc_id = "Non trovo l'ID del DataCenter !"
     common_chat = replied_user.common_chats_count
     username = replied_user.user.username
     user_bio = replied_user.about
@@ -56,8 +56,8 @@ async def fetch_info(replied_user, event):
         else ("Questo utente non ha un nome")
     )
     last_name = last_name.replace("\u2060", "") if last_name else (" ")
-    username = "@{}".format(username) if username else ("This User has no Username")
-    user_bio = "This User has no About" if not user_bio else user_bio
+    username = "@{}".format(username) if username else ("Questo utente non ha un username")
+    user_bio = "Questo utente non ha una bio" if not user_bio else user_bio
     caption = "<b><i>INFORMAZIONI DELL'UTENTE :</i></b>\n\n"
     caption += f"<b>👤 Nome:</b> {first_name} {last_name}\n"
     caption += f"<b>🤵 Username:</b> {username}\n"
@@ -108,9 +108,9 @@ async def _(event):
     if spamwatch:
         ban = spamwatch.get_ban(user_id)
         if ban:
-            sw = f"**Spamwatch Banned :** `True` \n       **-**🤷‍♂️**Reason : **`{ban.reason}`"
+            sw = f"**Spamwatch Banned :** `✅` \n       **-**🤷‍♂️**Reason : **`{ban.reason}`"
         else:
-            sw = f"**Spamwatch Banned :** `False`"
+            sw = f"**Spamwatch Banned :** `❌`"
     else:
         sw = "**Spamwatch Banned :**`Not Connected`"
     try:
@@ -121,9 +121,9 @@ async def _(event):
         data = None
     if data:
         if data["ok"]:
-            cas = "**Antispam(CAS) Banned :** `True`"
+            cas = "**Antispam(CAS) Banned :** `✅`"
         else:
-            cas = "**Antispam(CAS) Banned :** `False`"
+            cas = "**Antispam(CAS) Banned :** `❌`"
     else:
         cas = "**Antispam(CAS) Banned :** `Couldn't Fetch`"
     caption = """**Info of [{}](tg://user?id={}):
