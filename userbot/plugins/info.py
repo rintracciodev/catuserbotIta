@@ -108,7 +108,7 @@ async def _(event):
     if spamwatch:
         ban = spamwatch.get_ban(user_id)
         if ban:
-            sw = f"**Spamwatch Banned :** `✅` \n       **-**🤷‍♂️**Reason : **`{ban.reason}`"
+            sw = f"**Spamwatch Banned :** `✅` \n       **-**🤷‍♂️**Motivazione : **`{ban.reason}`"
         else:
             sw = f"**Spamwatch Banned :** `❌`"
     else:
