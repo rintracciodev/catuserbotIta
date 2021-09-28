@@ -112,7 +112,7 @@ async def _(event):
         else:
             sw = f"**Spamwatch Banned :** `❌`"
     else:
-        sw = "**Spamwatch Banned :**`Not Connected`"
+        sw = "**Spamwatch Banned :**`Non Connesso`"
     try:
         casurl = "https://api.cas.chat/check?user_id={}".format(user_id)
         data = get(casurl).json()
