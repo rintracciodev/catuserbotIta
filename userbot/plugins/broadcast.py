@@ -88,7 +88,7 @@ async def catbroadcast_add(event):
     sql.add_to_broadcastlist(keyword, event.chat_id)
     await edit_delete(
         event,
-        f"This chat is Now added to category {keyword}",
+        f"✅Chat aggiunta correttamente alla categoria {keyword}",
         parse_mode=_format.parse_pre,
     )
     chat = await event.get_chat()
@@ -108,12 +108,12 @@ async def catbroadcast_add(event):
 
 
 @catub.cat_cmd(
-    pattern="list(?:\s|$)([\s\S]*)",
-    command=("list", plugin_category),
+    pattern="lgmex(?:\s|$)([\s\S]*)",
+    command=("lgmex", plugin_category),
     info={
         "header": "will show the list of all chats in the given category",
-        "usage": "{tr}list <category name>",
-        "examples": "{tr}list test",
+        "usage": "{tr}lgmex <nome lista>",
+        "examples": "{tr}lgmex test",
     },
 )
 async def catbroadcast_list(event):
@@ -137,18 +137,18 @@ async def catbroadcast_list(event):
     catevent = await edit_or_reply(
         event, f"Fetching info of the category {keyword}", parse_mode=_format.parse_pre
     )
-    resultlist = f"**The category '{keyword}' have '{no_of_chats}' chats and these are listed below :**\n\n"
+    resultlist = f"**📢La categoria del Gmex '{keyword}' ha '{no_of_chats}' chat. 🗂Ecco la lista :**\n\n"
     errorlist = ""
     for chat in chats:
         try:
             chatinfo = await event.client.get_entity(int(chat))
             try:
                 if chatinfo.broadcast:
-                    resultlist += f" 👉 📢 **Channel** \n  •  **Name : **{chatinfo.title} \n  •  **id : **`{int(chat)}`\n\n"
+                    resultlist += f" 👉 📢 **Canale** \n  •  **Nome : **{chatinfo.title} \n  •  **🆔 : **`{int(chat)}`\n\n"
                 else:
-                    resultlist += f" 👉 👥 **Group** \n  •  **Name : **{chatinfo.title} \n  •  **id : **`{int(chat)}`\n\n"
+                    resultlist += f" 👉 👥 **Gruppo** \n  •  **Nome : **{chatinfo.title} \n  •  **🆔 : **`{int(chat)}`\n\n"
             except AttributeError:
-                resultlist += f" 👉 👤 **User** \n  •  **Name : **{chatinfo.first_name} \n  •  **id : **`{int(chat)}`\n\n"
+                resultlist += f" 👉 👤 **Utente** \n  •  **Nome : **{chatinfo.first_name} \n  •  **🆔 : **`{int(chat)}`\n\n"
         except Exception:
             errorlist += f" 👉 __This id {int(chat)} in database probably you may left the chat/channel or may be invalid id.\
                             \nRemove this id from the database by using this command__ `.frmfrom {keyword} {int(chat)}` \n\n"
@@ -157,11 +157,11 @@ async def catbroadcast_list(event):
 
 
 @catub.cat_cmd(
-    pattern="listall$",
-    command=("listall", plugin_category),
+    pattern="gmex$",
+    command=("gmex", plugin_category),
     info={
         "header": "Will show the list of all category names.",
-        "usage": "{tr}listall",
+        "usage": "{tr}gmex",
     },
 )
 async def catbroadcast_list(event):
@@ -173,19 +173,19 @@ async def catbroadcast_list(event):
             parse_mode=_format.parse_pre,
         )
     chats = sql.get_broadcastlist_chats()
-    resultext = "**Here are the list of your category's :**\n\n"
+    resultext = "**✅Ecco le categorie del Gmex :**\n\n"
     for i in chats:
         resultext += f" 👉 `{i}` __contains {sql.num_broadcastlist_chat(i)} chats__\n"
     await edit_or_reply(event, resultext)
 
 
 @catub.cat_cmd(
-    pattern="sendto(?:\s|$)([\s\S]*)",
-    command=("sendto", plugin_category),
+    pattern="mess(?:\s|$)([\s\S]*)",
+    command=("mess", plugin_category),
     info={
         "header": "will send the replied message to all chats in the given category",
-        "usage": "{tr}sendto <category name>",
-        "examples": "{tr}sendto test",
+        "usage": "{tr}mess <category name>",
+        "examples": "{tr}mess test",
     },
 )
 async def catbroadcast_send(event):
@@ -234,12 +234,12 @@ async def catbroadcast_send(event):
         except Exception as e:
             LOGS.info(str(e))
         await sleep(0.5)
-    resultext = f"`The message was sent to {i} chats out of {no_of_chats} chats in category {keyword}.`"
+    resultext = f"`📨Il messaggio è stato inviato in {i} chat delle {no_of_chats} chat della categoria {keyword}.`"
     await edit_delete(catevent, resultext)
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID,
-            f"A message is sent to {i} chats out of {no_of_chats} chats in category {keyword}",
+            f"📨Il messaggio è stato inviato in {i} chat delle {no_of_chats} chat della categoria {keyword}",
             parse_mode=_format.parse_pre,
         )
 
@@ -282,7 +282,7 @@ async def catbroadcast_send(event):
     chats = sql.get_chat_broadcastlist(keyword)
     catevent = await edit_or_reply(
         event,
-        "sending this message to all groups in the category",
+        "🔄Sto inviando il messaggio in tutti i gruppi di questa categoria🔄",
         parse_mode=_format.parse_pre,
     )
     try:
@@ -338,7 +338,7 @@ async def catbroadcast_remove(event):
     sql.rm_from_broadcastlist(keyword, event.chat_id)
     await edit_delete(
         event,
-        f"This chat is Now removed from the category {keyword}",
+        f"🚫Questa chat è stata rimossa dalla categoria {keyword}",
         parse_mode=_format.parse_pre,
     )
     chat = await event.get_chat()
@@ -407,7 +407,7 @@ async def catbroadcast_remove(event):
     sql.rm_from_broadcastlist(keyword, groupid)
     await edit_delete(
         event,
-        f"This chat {groupid} is Now removed from the category {keyword}",
+        f"🚫Questa chat {groupid} è ora rimossa dalla categoria {keyword}",
         parse_mode=_format.parse_pre,
     )
     chat = await event.get_chat()
@@ -449,7 +449,7 @@ async def catbroadcast_delete(event):
         sql.del_keyword_broadcastlist(catinput_str)
         await edit_or_reply(
             event,
-            f"Successfully deleted the category {catinput_str}",
+            f"🔇La categoria {catinput_str} è stata eliminata con successo",
             parse_mode=_format.parse_pre,
         )
     except Exception as e:
