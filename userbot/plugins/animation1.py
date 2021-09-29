@@ -320,3 +320,21 @@ async def _(event):
     await event.edit("🔄Dissociamento in corso🔄")
     await asyncio.sleep(0.9)
     await event.edit("✅Dissociamento completato✅")
+
+    
+@catub.cat_cmd(
+    pattern="rolex$",
+    command=("rolex", plugin_category),
+    info={
+        "header": "Per rubare un rolex",
+        "usage": "{tr}rolex",
+    },
+)
+async def _(event):
+    "animation command"
+    event = await edit_or_reply(event, "rolex")
+    await event.edit("🛵Sto venendo a rubbarti il Rolex🏃")
+    await asyncio.sleep(0.6)
+    await event.edit("⌚️ Preso !")
+    await asyncio.sleep(0.9)
+    await event.edit("🛣🛵 Sto scapando nabbo :)))))🔵⚪️")
