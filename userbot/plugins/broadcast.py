@@ -56,7 +56,7 @@ async def catbroadcast_add(event):
         msg = await event.client.send_message(user.id, reason)
     else:
         msg = await event.client.send_message(user.id, reply)
-    await edit_delete(event, "__Successfully sent the message.__")
+    await edit_delete(event, "__Messaggio inviato con successo.__")
 
 
 @catub.cat_cmd(
@@ -102,7 +102,7 @@ async def catbroadcast_add(event):
         except Exception:
             await event.client.send_message(
                 BOTLOG_CHATID,
-                f"The user {chat.first_name} is added to category {keyword}",
+                f"L'utente {chat.first_name} è stato aggiunto alla categoria {keyword}",
                 parse_mode=_format.parse_pre,
             )
 
@@ -130,7 +130,7 @@ async def catbroadcast_list(event):
     if no_of_chats == 0:
         return await edit_delete(
             event,
-            f"There is no category with name {keyword}. Check '.listall'",
+            f"Non c'è nessun plugin chiamato {keyword}. Per vedere tutti i plugin invia '.gmex'",
             parse_mode=_format.parse_pre,
         )
     chats = sql.get_chat_broadcastlist(keyword)
@@ -175,7 +175,7 @@ async def catbroadcast_list(event):
     chats = sql.get_broadcastlist_chats()
     resultext = "**✅Ecco le categorie del Gmex :**\n\n"
     for i in chats:
-        resultext += f" 👉 `{i}` __contains {sql.num_broadcastlist_chat(i)} chats__\n"
+        resultext += f" 👉 `{i}` __contiene {sql.num_broadcastlist_chat(i)} chat__\n"
     await edit_or_reply(event, resultext)
 
 
