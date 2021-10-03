@@ -44,7 +44,7 @@ plugin_category = "utils"
 )
 async def _(event):
     "To get list of admins."
-    mentions = "**Admins in this Group**: \n"
+    mentions = "**🛃Amministratori in questo gruppo**: \n"
     reply_message = await reply_id(event)
     input_str = event.pattern_match.group(1)
     to_write_chat = await event.get_input_chat()
@@ -74,7 +74,7 @@ async def _(event):
             if x.deleted:
                 mentions += "\n `{}`".format(x.id)
             elif isinstance(x.participant, ChannelParticipantAdmin):
-                mentions += "\n ⚜️ [{}](tg://user?id={}) `{}`".format(
+                mentions += "\n 👮 [{}](tg://user?id={}) `{}`".format(
                     x.first_name, x.id, x.id
                 )
     except Exception as e:
@@ -98,7 +98,7 @@ async def _(event):
 )
 async def _(event):
     "To get list of bots."
-    mentions = "**Bots in this Group**: \n"
+    mentions = "**💻Bot in questo gruppo**: \n"
     input_str = event.pattern_match.group(1)
     if not input_str:
         chat = await event.get_input_chat()
@@ -113,7 +113,7 @@ async def _(event):
             chat, filter=ChannelParticipantsBots
         ):
             if isinstance(x.participant, ChannelParticipantAdmin):
-                mentions += "\n ⚜️ [{}](tg://user?id={}) `{}`".format(
+                mentions += "\n 🤖 [{}](tg://user?id={}) `{}`".format(
                     x.first_name, x.id, x.id
                 )
             else:
@@ -126,21 +126,21 @@ async def _(event):
 
 
 @catub.cat_cmd(
-    pattern="users(?:\s|$)([\s\S]*)",
-    command=("users", plugin_category),
+    pattern="utenti(?:\s|$)([\s\S]*)",
+    command=("utenti", plugin_category),
     info={
         "header": "To get list of users.",
         "description": "Will show you the list of users.",
         "note": "There was limitation in this you cant get more 10k users",
         "usage": [
-            "{tr}users <username/userid>",
-            "{tr}users <in group where you need>",
+            "{tr}utenti <username/userid>",
+            "{tr}utenti <nel gruppo in cui ti serve>",
         ],
     },
 )
 async def get_users(show):
     "To get list of Users."
-    mentions = "**Users in this Group**: \n"
+    mentions = "**👤Utenti in questo gruppo**: \n"
     await reply_id(show)
     input_str = show.pattern_match.group(1)
     if input_str:
@@ -151,12 +151,12 @@ async def get_users(show):
             return await edit_delete(show, f"`{e}`", 10)
     elif not show.is_group:
         return await edit_or_reply(show, "`Are you sure this is a group?`")
-    catevent = await edit_or_reply(show, "`getting users list wait...`  ")
+    catevent = await edit_or_reply(show, "`Carico lista utenti...`  ")
     try:
         if show.pattern_match.group(1):
             async for user in show.client.iter_participants(chat.id):
                 if user.deleted:
-                    mentions += f"\nDeleted Account `{user.id}`"
+                    mentions += f"\nAccount Eliminato `{user.id}`"
                 else:
                     mentions += (
                         f"\n[{user.first_name}](tg://user?id={user.id}) `{user.id}`"
@@ -164,7 +164,7 @@ async def get_users(show):
         else:
             async for user in show.client.iter_participants(show.chat_id):
                 if user.deleted:
-                    mentions += f"\nDeleted Account `{user.id}`"
+                    mentions += f"\nAccount Eliminato `{user.id}`"
                 else:
                     mentions += (
                         f"\n[{user.first_name}](tg://user?id={user.id}) `{user.id}`"
