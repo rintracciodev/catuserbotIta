@@ -189,7 +189,7 @@ async def get_users(show):
 )
 async def info(event):
     "To get group information"
-    catevent = await edit_or_reply(event, "`Analysing the chat...`")
+    catevent = await edit_or_reply(event, "`Analizzando la chat...`")
     chat = await get_chatinfo(event, catevent)
     if chat is None:
         return
@@ -387,17 +387,17 @@ async def fetch_info(chat, event):  # sourcery no-metrics
         for _ in bots_list:
             bots += 1
 
-    caption = "<b>INFO CHAT:</b>\n"
+    caption = "<b>📝INFO CHAT:</b>\n"
     caption += f"🆔Chat ID: <code>{chat_obj_info.id}</code>\n"
     if chat_title is not None:
         caption += f"✒️Nome {chat_type}: {chat_title}\n"
     if former_title is not None:  # Meant is the very first title
         caption += f"📋Nome precedente: {former_title}\n"
     if username is not None:
-        caption += f"🧰Tipo {chat_type}: Public\n"
+        caption += f"🧰Tipo {chat_type}: Pubblico\n"
         caption += f"🔗Link: {username}\n"
     else:
-        caption += f"🧰Tipo {chat_type}: Private\n"
+        caption += f"🧰Tipo {chat_type}: Privato\n"
     if creator_username is not None:
         caption += f"👑Creatore: {creator_username}\n"
     elif creator_valid:
