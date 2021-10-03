@@ -339,12 +339,12 @@ async def fetch_info(chat, event):  # sourcery no-metrics
     bots_list = chat.full_chat.bot_info  # this is a list
     bots = 0
     supergroup = (
-        "<b>Yes</b>"
+        "<b>Sì</b>"
         if hasattr(chat_obj_info, "megagroup") and chat_obj_info.megagroup
         else "No"
     )
     slowmode = (
-        "<b>Yes</b>"
+        "<b>Sì</b>"
         if hasattr(chat_obj_info, "slowmode_enabled") and chat_obj_info.slowmode_enabled
         else "No"
     )
@@ -354,12 +354,12 @@ async def fetch_info(chat, event):  # sourcery no-metrics
         else None
     )
     restricted = (
-        "<b>Yes</b>"
+        "<b>Sì</b>"
         if hasattr(chat_obj_info, "restricted") and chat_obj_info.restricted
         else "No"
     )
     verified = (
-        "<b>Yes</b>"
+        "<b>Sì</b>"
         if hasattr(chat_obj_info, "verified") and chat_obj_info.verified
         else "No"
     )
