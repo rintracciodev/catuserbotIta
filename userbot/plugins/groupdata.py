@@ -339,14 +339,14 @@ async def fetch_info(chat, event):  # sourcery no-metrics
     bots_list = chat.full_chat.bot_info  # this is a list
     bots = 0
     supergroup = (
-        "<b>Sì</b>"
+        "<b>✅</b>"
         if hasattr(chat_obj_info, "megagroup") and chat_obj_info.megagroup
-        else "No"
+        else "❌"
     )
     slowmode = (
-        "<b>Sì</b>"
+        "<b>✅</b>"
         if hasattr(chat_obj_info, "slowmode_enabled") and chat_obj_info.slowmode_enabled
-        else "No"
+        else "❌"
     )
     slowmode_time = (
         chat.full_chat.slowmode_seconds
@@ -354,14 +354,14 @@ async def fetch_info(chat, event):  # sourcery no-metrics
         else None
     )
     restricted = (
-        "<b>Sì</b>"
+        "<b>✅</b>"
         if hasattr(chat_obj_info, "restricted") and chat_obj_info.restricted
-        else "No"
+        else "❌"
     )
     verified = (
-        "<b>Sì</b>"
+        "<b>✅</b>"
         if hasattr(chat_obj_info, "verified") and chat_obj_info.verified
-        else "No"
+        else "❌"
     )
     username = "@{}".format(username) if username else None
     creator_username = "@{}".format(creator_username) if creator_username else None
