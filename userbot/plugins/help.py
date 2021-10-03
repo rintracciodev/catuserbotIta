@@ -91,14 +91,14 @@ async def plugininfo(input_str, event, flag):
             outstr += f"•  **🔎Info :** `{CMD_INFO[cmd][1]}`\n\n"
         except IndexError:
             outstr += "•  **🔎Info :** `None`\n\n"
-    outstr += f"**👩‍💻 Esegui : ** `{cmdprefix}help <command name>`\
+    outstr += f"**🧑‍💻 Esegui : ** `{cmdprefix}help <command name>`\
         \n**❗Nota : **📝Per avere le informazioni di uno di questi comandi scrivi `{cmdprefix}help -c <comando>`."
     return outstr
 
 
 async def grpinfo():
     outstr = "**Plugins in Catuserbot are:**\n\n"
-    outstr += f"**👩‍💻 Usage : ** `{cmdprefix}help <plugin name>`\n\n"
+    outstr += f"**🧑‍💻 Usa : ** `{cmdprefix}help <plugin name>`\n\n"
     category = ["admin", "bot", "fun", "misc", "tools", "utils", "extra"]
     for cat in category:
         plugins = GRP_INFO[cat]
@@ -121,7 +121,7 @@ async def cmdlist():
             for cmd in sorted(cmds):
                 outstr += f"  - `{cmdprefix}{cmd}`\n"
             outstr += "\n"
-    outstr += f"**👩‍💻 Usa : ** `{cmdprefix}help -c <comando>`"
+    outstr += f"**🧑‍💻 Usa : ** `{cmdprefix}help -c <comando>`"
     return outstr
 
 
@@ -194,7 +194,7 @@ async def _(event):
         outstr = f"• **{input_str.title()} has {len(cmds)} commands**\n"
         for cmd in cmds:
             outstr += f"  - `{cmdprefix}{cmd}`\n"
-        outstr += f"**👩‍💻 Usage : ** `{cmdprefix}help -c <command name>`"
+        outstr += f"**🧑‍💻 Usa : ** `{cmdprefix}help -c <command name>`"
     await edit_or_reply(
         event, outstr, aslink=True, linktext="🗂Ecco la lista di tutti i comandi del tuo userbot :"
     )
