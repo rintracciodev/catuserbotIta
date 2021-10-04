@@ -121,10 +121,10 @@ async def ban_starters(event):
     "To get list of users who started bot."
     ulist = get_all_starters()
     if len(ulist) == 0:
-        return await edit_delete(event, "`No one started your bot yet.`")
-    msg = "**The list of users who started your bot are :\n\n**"
+        return await edit_delete(event, "`Nessuno ha avviato il tuo bot al momento.`")
+    msg = "**📣Ecco la lista delle persone che hanno avviato il tuo bot :\n\n**"
     for user in ulist:
-        msg += f"• 👤 {_format.mentionuser(user.first_name , user.user_id)}\n**ID:** `{user.user_id}`\n**UserName:** @{user.username}\n**Date: **__{user.date}__\n\n"
+        msg += f"• 👤 {_format.mentionuser(user.first_name , user.user_id)}\n**🆔:** `{user.user_id}`\n**🌐Username:** @{user.username}\n**🗓Data di avvio: **__{user.date}__\n\n"
     await edit_or_reply(event, msg)
 
 
@@ -151,10 +151,10 @@ async def ban_botpms(event):
     if check:
         return await event.client.send_message(
             event.chat_id,
-            f"#Already_banned\
-            \nUser already exists in my Banned Users list.\
-            \n**Reason For Bot BAN:** `{check.reason}`\
-            \n**Date:** `{check.date}`.",
+            f"#Già_banned\
+            \nL'utente è già stato bannato.\
+            \n**Motivazione Ban:** `{check.reason}`\
+            \n**Data:** `{check.date}`.",
         )
     msg = await ban_user_from_bot(user, reason, reply_to)
     await event.reply(msg)
@@ -177,7 +177,7 @@ async def ban_botpms(event):
     if not check:
         return await event.client.send_message(
             event.chat_id,
-            f"#User_Not_Banned\
+            f"#Utente_Non_Bannato\
             \n👤 {_format.mentionuser(user.first_name , user.id)} doesn't exist in my Banned Users list.",
         )
     msg = await unban_user_from_bot(user, reason, reply_to)
