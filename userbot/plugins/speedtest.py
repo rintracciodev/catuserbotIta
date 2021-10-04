@@ -52,7 +52,7 @@ async def _(event):
     elif input_str == "text":
         as_text = True
     catevent = await edit_or_reply(
-        event, "`Calculating my internet speed. Please wait!`"
+        event, "`Sto calcolando la mia connessione internet, per favore aspetta !`"
     )
     start = time()
     s = speedtest.Speedtest()
@@ -95,7 +95,7 @@ async def _(event):
             await event.client.send_file(
                 event.chat_id,
                 speedtest_image,
-                caption="**SpeedTest** completed in {} seconds".format(ms),
+                caption="**SpeedTest** completato in {} secondi".format(ms),
                 force_document=as_document,
                 reply_to=reply_msg_id,
                 allow_cache=False,
