@@ -408,7 +408,7 @@ Y = (
 )    
 
     
-M = (
+Z = (
     " ██▄█╔═╗█▀█╔═╗█──╔╗─██▄█╔═╗█──▄█▀█▄▄███▄\n"
     " █─▀█║█║██▀║█║█──║║─█─▀█║═╣█─▐█░████████\n"
     " █──█║╦║█──║▀║███║║─█──█║═╣███▀████████▀\n"
@@ -721,4 +721,4 @@ async def bluedevilporco(porco):
 )
 async def bluedevilnapoli(napoli):
     "fun art command"
-    await edit_or_reply(napoli, M)
+    await edit_or_reply(napoli, Z)
