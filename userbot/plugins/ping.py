@@ -55,7 +55,7 @@ async def _(event):
         if normal in normaltext:
             pingchars = pingfont[normaltext.index(normal)]
             ms = ms.replace(normal, pingchars)
-    my = f"Ecco il tuo ping!!\n`{ms}` ms\nCreatore **{mention}**"
+    my = f"📶Ecco il tuo ping!!\n`{ms}` ms\nCreatore **{mention}**"
     ping_caption = gvarstatus("PING_TEMPLATE") or my
 
     if flag == " -a":
