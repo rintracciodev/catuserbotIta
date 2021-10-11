@@ -35,7 +35,7 @@ async def _(event):
         catevent = await edit_or_reply(event, "Pong!")
         end = datetime.now()
         ms = (end - start).microseconds / 1000
-        await catevent.edit(f"📶Ping:\n`{ms} ms            Userbot di: {mention}`")
+        await catevent.edit(f"📶Ping:\n`{ms} ms`")
 
 
 @catub.cat_cmd(
