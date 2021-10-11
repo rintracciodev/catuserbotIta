@@ -13,7 +13,7 @@ from userbot import catub
 from ..Config import Config
 from ..core.logger import logging
 from ..core.managers import edit_or_reply
-from . import BOTLOG, BOTLOG_CHATID
+from . import BOTLOG, BOTLOG_CHATID, mention
 
 LOGS = logging.getLogger(__name__)
 plugin_category = "utils"
@@ -50,7 +50,7 @@ def resize_image(image):
 )  # sourcery no-metrics
 async def _(event):
     "To get telegraph link."
-    catevent = await edit_or_reply(event, "`processing........`")
+    catevent = await edit_or_reply(event, "`caricamento........`")
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID,
@@ -82,8 +82,9 @@ async def _(event):
             ms = (end - start).seconds
             os.remove(downloaded_file_name)
             await catevent.edit(
-                f"**link : **[telegraph](https://telegra.ph{media_urls[0]})\
-                    \n**Time Taken : **`{ms} seconds.`",
+                f"**➥ Caricato a :-**[telegraph](https://telegra.ph{media_urls[0]})\
+                 \n**➥ Caricato in {ms} secondi.**\
+                 \n**➥ Caricato da :-** {mention}",
                 link_preview=True,
             )
     elif input_str in ["text", "t"]:
@@ -119,7 +120,8 @@ async def _(event):
         ms = (end - start).seconds
         cat = f"https://telegra.ph/{response['path']}"
         await catevent.edit(
-            f"**link : ** [telegraph]({cat})\
-                 \n**Time Taken : **`{ms} seconds.`",
+            f"**➥ Uploaded to :-** [telegraph]({cat})\
+                 \n**➥ Caricato in {ms} secondi.**\
+                 \n**➥ Caricato da :-** {mention}",
             link_preview=True,
         )
