@@ -1,4 +1,8 @@
 # ==================================================================================================
+# Made by https://t.me/o_s_h_o_r_a_j
+# It is simillar to my other plugin 'pping' (ping with media)
+# This randomly chooses from the given media links, i.e 'multi-pping', in short 'mping'
+# Now with PING_TEMPLATE
 import asyncio
 import random
 from datetime import datetime
@@ -14,16 +18,17 @@ plugin_category = "tools"
 # ===============================================
 normaltext = "1234567890."
 pingfont = [
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "0",
+    "𝟏",
+    "𝟐",
+    "𝟑",
+    "𝟒",
+    "𝟓",
+    "𝟔",
+    "𝟕",
+    "𝟖",
+    "𝟗",
+    "𝟎",
+    "•",
 ]
 
 # ===============================================
@@ -43,14 +48,14 @@ async def _(event):
     "To check ping"
     flag = event.pattern_match.group(1)
     start = datetime.now()
-    catevent = await edit_or_reply(event, f"`Caricamento..`")
+    catevent = await edit_or_reply(event, f"`Checking`")
     end = datetime.now()
     ms = str((end - start).microseconds / 1000)
     for normal in ms:
         if normal in normaltext:
             pingchars = pingfont[normaltext.index(normal)]
             ms = ms.replace(normal, pingchars)
-    my = f"Ecco il ping!!\n`{ms}` ms\nCreatore: **{mention}**"
+    my = f"𝔑𝔬𝔴, 𝔏𝔢𝔱 𝔗𝔥𝔢 𝔊𝔞𝔪𝔢 𝔅𝔢𝔤𝔦𝔫!!\n`{ms}` 𝔪𝔰\nℜ𝔲𝔩𝔢𝔰 𝔅𝔶 **{mention}**"
     ping_caption = gvarstatus("PING_TEMPLATE") or my
 
     if flag == " -a":
@@ -107,7 +112,7 @@ async def _(event):
         if normal in normaltext:
             pingchars = pingfont[normaltext.index(normal)]
             ms = ms.replace(normal, pingchars)
-    my = f"Ecco il ping!!\n`{ms}` ms\nCreatore: **{mention}**"
+    my = f"𝔑𝔬𝔴, 𝔏𝔢𝔱 𝔗𝔥𝔢 𝔊𝔞𝔪𝔢 𝔅𝔢𝔤𝔦𝔫!!\n`{ms}` 𝔪𝔰\nℜ𝔲𝔩𝔢𝔰 𝔅𝔶 **{mention}**"
     ping_caption = gvarstatus("PING_TEMPLATE") or my
     caption = ping_caption.format(ping=ms, mention=mention)
     PING_PIC = random.choice(PING_PICS)
