@@ -55,7 +55,7 @@ async def _(event):
         if normal in normaltext:
             pingchars = pingfont[normaltext.index(normal)]
             ms = ms.replace(normal, pingchars)
-    my = f"📶Ecco il tuo ping!!\n`{ms}` ms\nCreatore **{mention}**"
+    my = f"📶Ecco il tuo ping!!\n`{ms}` ms\n👑Creatore **{mention}**"
     ping_caption = gvarstatus("PING_TEMPLATE") or my
 
     if flag == " -a":
@@ -101,7 +101,7 @@ async def _(event):
     # add space b/w each telegraph link
     PING_PICS = (
         gvarstatus("PING_PICS")
-        or "https://telegra.ph/file/1328d62db93ad22b69ba2.jpg https://telegra.ph/file/b2da6e4c55dd29600e4ed.jpg"
+        or "https://telegra.ph/file/71da5a510fc4fac385a79.jpg https://telegra.ph/file/b2da6e4c55dd29600e4ed.jpg"
     )
     PING_PICS = PING_PICS.rsplit(" ")
     start = datetime.now()
@@ -112,7 +112,7 @@ async def _(event):
         if normal in normaltext:
             pingchars = pingfont[normaltext.index(normal)]
             ms = ms.replace(normal, pingchars)
-    my = f"Ecco il tuo ping!!\n`{ms}` ms\nCreatore **{mention}**"
+    my = f"📶Ecco il tuo ping!!\n`{ms}` ms\n👑Creatore **{mention}**"
     ping_caption = gvarstatus("PING_TEMPLATE") or my
     caption = ping_caption.format(ping=ms, mention=mention)
     PING_PIC = random.choice(PING_PICS)
