@@ -1,5 +1,5 @@
 # ==================================================================================================
-# Made by https://t.me/o_s_h_o_r_a_j
+# Edit by https://t.me/rintraccio
 # It is simillar to my other plugin 'pping' (ping with media)
 # This randomly chooses from the given media links, i.e 'multi-pping', in short 'mping'
 # Now with PING_TEMPLATE
@@ -55,7 +55,7 @@ async def _(event):
         if normal in normaltext:
             pingchars = pingfont[normaltext.index(normal)]
             ms = ms.replace(normal, pingchars)
-    my = f"𝔑𝔬𝔴, 𝔏𝔢𝔱 𝔗𝔥𝔢 𝔊𝔞𝔪𝔢 𝔅𝔢𝔤𝔦𝔫!!\n`{ms}` 𝔪𝔰\nℜ𝔲𝔩𝔢𝔰 𝔅𝔶 **{mention}**"
+    my = f"Ecco il tuo ping!!\n`{ms}` ms\nCreatore **{mention}**"
     ping_caption = gvarstatus("PING_TEMPLATE") or my
 
     if flag == " -a":
@@ -112,7 +112,7 @@ async def _(event):
         if normal in normaltext:
             pingchars = pingfont[normaltext.index(normal)]
             ms = ms.replace(normal, pingchars)
-    my = f"𝔑𝔬𝔴, 𝔏𝔢𝔱 𝔗𝔥𝔢 𝔊𝔞𝔪𝔢 𝔅𝔢𝔤𝔦𝔫!!\n`{ms}` 𝔪𝔰\nℜ𝔲𝔩𝔢𝔰 𝔅𝔶 **{mention}**"
+    my = f"Ecco il tuo ping!!\n`{ms}` ms\nCreatore **{mention}**"
     ping_caption = gvarstatus("PING_TEMPLATE") or my
     caption = ping_caption.format(ping=ms, mention=mention)
     PING_PIC = random.choice(PING_PICS)
