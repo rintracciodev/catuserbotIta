@@ -1,4 +1,4 @@
-# by  @sandy1709 ( https://t.me/mrconfused  )
+# by  @rintracciodev ( https://t.me/rintracciodev / https://t.me/rintraccio )
 
 # songs finder for catuserbot
 import asyncio
