@@ -31,7 +31,7 @@ LOGS = logging.getLogger(__name__)
 SONG_SEARCH_STRING = "<code>⏱ Aspetta..! Sto cercando la tua canzone👀🔎....</code>"
 SONG_NOT_FOUND = "<code>Mi dispiace 😅 Non ho trovato la canzone che stai cercando 😔</code>"
 SONG_SENDING_STRING = "<code>⚡️Bingo..! Ho trovato la canzone che stai cercando😁....</code>"
-SONGBOT_BLOCKED_STRING = "<code>Please unblock @songdl_bot and try again</code>"
+SONGBOT_BLOCKED_STRING = "<code>Sblocca @songdl_bot e poi prova di nuovo.</code>"
 # =========================================================== #
 #                                                             #
 # =========================================================== #
