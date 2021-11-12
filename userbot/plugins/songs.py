@@ -28,9 +28,9 @@ LOGS = logging.getLogger(__name__)
 # =========================================================== #
 #                           STRINGS                           #
 # =========================================================== #
-SONG_SEARCH_STRING = "<code>wi8..! I am finding your song....</code>"
-SONG_NOT_FOUND = "<code>Sorry !I am unable to find any song like that</code>"
-SONG_SENDING_STRING = "<code>yeah..! i found something wi8..🥰...</code>"
+SONG_SEARCH_STRING = "<code>⏱ Aspetta..! Sto cercando la tua canzone👀🔎....</code>"
+SONG_NOT_FOUND = "<code>Mi dispiace 😅 Non ho trovato la canzone che stai cercando 😔</code>"
+SONG_SENDING_STRING = "<code>⚡️Bingo..! Ho trovato la canzone che stai cercando😁....</code>"
 SONGBOT_BLOCKED_STRING = "<code>Please unblock @songdl_bot and try again</code>"
 # =========================================================== #
 #                                                             #
@@ -61,7 +61,7 @@ async def _(event):
     else:
         return await edit_or_reply(event, "`What I am Supposed to find `")
     cat = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-    catevent = await edit_or_reply(event, "`wi8..! I am finding your song....`")
+    catevent = await edit_or_reply(event, "`⏱ Aspetta..! Sto cercando la tua canzone👀🔎....`")
     video_link = await yt_search(str(query))
     if not url(video_link):
         return await catevent.edit(
@@ -92,7 +92,7 @@ async def _(event):
         return await catevent.edit(
             f"Sorry!. I can't find any related video/audio for `{query}`"
         )
-    await catevent.edit("`yeah..! i found something wi8..🥰`")
+    await catevent.edit("`⚡️Bingo..! Ho trovato la canzone che stai cercando😁....`")
     catthumb = Path(f"{catname}.jpg")
     if not os.path.exists(catthumb):
         catthumb = Path(f"{catname}.webp")
@@ -144,7 +144,7 @@ async def _(event):
     else:
         return await edit_or_reply(event, "`What I am Supposed to find`")
     cat = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-    catevent = await edit_or_reply(event, "`wi8..! I am finding your song....`")
+    catevent = await edit_or_reply(event, "`⏱ Aspetta..! Sto cercando la tua canzone👀🔎....`")
     video_link = await yt_search(str(query))
     if not url(video_link):
         return await catevent.edit(
@@ -175,7 +175,7 @@ async def _(event):
         return await catevent.edit(
             f"Sorry!. I can't find any related video/audio for `{query}`"
         )
-    await catevent.edit("`yeah..! i found something wi8..🥰`")
+    await catevent.edit("`⚡️Bingo..! Ho trovato la canzone che stai cercando😁....`")
     catthumb = Path(f"{catname}.jpg")
     if not os.path.exists(catthumb):
         catthumb = Path(f"{catname}.webp")
